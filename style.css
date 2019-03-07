@@ -1,0 +1,39 @@
+#mainwrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid;
+}
+
+header {
+  height: 150px;
+  margin-left: 10%;
+  border: 1px solid green;
+}
+
+#navbar {
+  /*margin-right: 10%;*/
+  width: 20%;
+  text-align: center;
+  border: 1px solid;
+}
+
+#navbar li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+#navbar ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 3px;
+}
+
+header, #navbar {
+  text-align: center;
+}
+
+#contener {
+  width: 100%:
+  border: 1px solid;
+}
