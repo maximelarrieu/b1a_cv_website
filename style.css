@@ -1,39 +1,111 @@
-#mainwrapper {
+body {
+  font-family: Verdana, sans-serif;
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-  border: 1px solid;
+  margin: 0;
+  padding: 0;
 }
 
 header {
-  height: 150px;
-  margin-left: 10%;
-  border: 1px solid green;
+  position: absolute;
+  width: 100%;
+  height: 170px;
+  top: -40px;
+  left: 0;
+  background: linear-gradient(30deg, #3f51b5, #00bcd4);
+  animation: animate 20s linear infinite;
+}
+@keyframes animate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(360deg);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
+header h1 {
+  font-size: 30px;
+  margin-left: 16%;
+  margin-top: 5.5%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+}
+header h4 {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-left: 17%;
 }
 
-#navbar {
-  /*margin-right: 10%;*/
-  width: 20%;
-  text-align: center;
-  border: 1px solid;
+nav {
+  position: absolute;
+  width: 400px;
+  margin-left: 64%;
+  bottom: 0;
 }
-
-#navbar li {
-  display: inline-block;
-  margin: 0 20px;
-}
-
-#navbar ul {
+ul {
   list-style-type: none;
-  margin: 0px;
-  padding: 3px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
 }
-
-header, #navbar {
-  text-align: center;
+li {
+  display: inline-block;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+	color: #fff;
+	font-size: 15px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	position: relative;
+  -webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+  padding: 15px;
+}
+a:after {
+	content: "";
+	position: absolute;
+	height: 2px;
+	background-color: black;/*tomato*/
+	width: 0;
+	left: 50%;
+	bottom: 0;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	-webkit-transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  	transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+}
+a:hover {
+	color: black;/*tomato*/
+}
+a:hover:after {
+	width: 100%;
 }
 
 #contener {
-  width: 100%:
-  border: 1px solid;
+  width: 65%;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 150px;
+  border: 1px solid grey;
+  border-radius: 6px;
+}
+
+#contener h1, img {
+  display: inline-block;
+  /*position: relative;*/
+  vertical-align: top;
+  margin: 20px;
 }
