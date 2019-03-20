@@ -1,11 +1,11 @@
 /*--------------------MAINWRAPPER--------------------*/
 /***Generals parameters, my page's base***/
 body {
-  font-family: Verdana, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   width: 1920px;
   margin: 0;
   padding: 0;
-  background-image: url("../ressource/fond.jpg");
+  background-image: url("../ressource/fond2.jpg");
   color: white;
 }
 /*--------------------HEADER--------------------*/
@@ -155,3 +155,27 @@ nav a:hover:after, #conterner a:hover:after {
   display: inline-block;
   vertical-align: top;
 }
+
+
+
+
+
+<?php
+
+if (isset($_POST['submit'])) {
+  $name = $_POST['nom'];
+  $mailFrom = $_POST['email'];
+  $message= $_POST['message'];
+
+  $mailTo = "maxime.larrieu@ynov.com";
+  $headers = "MIME Version 1.0\r\n"
+  $headers .= "From: ".$mailFrom."\r\n"."X-Mailer: PHP/".phpversion();
+  $headers .= "Content-type: text; charset=UTF-8\r\n";
+  $txt = "Message contact depuis maximelarrieu.website from ".$name.".\n\n".$message;
+  $subject = "Message depuis site CV"
+  echo "Message envoyé"
+
+  mail($mailTo, $subject, $txt, $headers);
+}
+
+?>

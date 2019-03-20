@@ -1,11 +1,11 @@
 /*--------------------MAINWRAPPER--------------------*/
 /***Generals parameters, my page's base***/
 body {
-  font-family: Verdana, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   width: 1920px;
   margin: 0;
   padding: 0;
-  background-image: url("../ressource/fond.jpg");
+  background-image: url("../ressource/fond2.jpg");
   color: white;
 }
 /*--------------------HEADER--------------------*/
