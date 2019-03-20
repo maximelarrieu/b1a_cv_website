@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Titre de la page</title>
   <link rel="stylesheet" href="../my_styles/index_style.css">
-  <script src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 
 <body>
@@ -16,15 +16,28 @@
         <ul>
           <li><a href="index.html">HOME</a></li>
           <li><a href="cv.html">CV</a></li>
-          <li><a href="projects.html">PROJECTS</a></li>
+          <li><a href="projects.html">PROJETS</a></li>
           <li><a href="contact.html">CONTACT</a></li>
         </ul>
       </nav>
     </header>
     <div id="contener">
-      <img src="../ressource/img.jpg" />
-      <h2>WELCOME</h2>
+      <img class="pdp" src="../ressource/img.jpg" />
+      <h2>BONJOUR,</h2>
+      <p>Maxime Larrieu, 20 ans. Résidant Bordeaux.</p>
+      <p>Jeune passionné d'informatique et de matériel informatique,
+      actuellement étudiant en école d'informatique.</p>
+      <p class="welcomeMsg">Bienvenue sur mon CV en ligne.</p>
+
+      <img src="../ressource/linkedin.png" class="linkedin" />
+      <img src="../ressource/github.png" class="github" />
     </div>
+    <footer>
+      <div id="footertext">
+        Ynov @ N'hésitez pas à <a class="contactme" href="contact.html">me contacter</a> ! @ <span id="current-year"></span>
+      </div>
+    </footer>
+  <script src="../script.js"></script>
 </body>
 
 </html>

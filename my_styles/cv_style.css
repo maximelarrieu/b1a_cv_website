@@ -39,7 +39,7 @@ header h1 {
   margin-left: 23%;
   margin-top: 4.6%;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   color: white;
 }
 header h4 {
@@ -116,24 +116,6 @@ a:hover:after {
   background-color: rgba(0, 0, 0, 0.43);
   border-radius: 6px;
 }
-button {
-  position: absolute;
-  background-color: rgb(41, 92, 200);
-  border: none;
-  color: white;
-  padding: 12px 30px;
-  cursor: pointer;
-  font-size: 12px;
-  border-radius: 6px;
-  box-shadow: 3px 3px 8px black;
-  right: 10px;
-}
-.fa {
-  left: 2px;
-}
-button:hover {
-  background-color: rgb(41, 92, 238);
-}
 #contener h2, img, button {
   float: left;
   display: inline-block;
@@ -143,13 +125,33 @@ button:hover {
 }
 #contener h2 {
   margin-left: 28px;
+  font-size: 29px;
+  letter-spacing: 1px;
   color: white;
+  font-weight: bold;
+}
+/***Button download config***/
+button {
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  background-color: rgb(52, 95, 145);
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 6px;
+  box-shadow: 3px 3px 8px black;
+  right: 20px;
+}
+button:hover {
+  background-color: rgb(52, 95, 145, 0.4);
 }
 /*--------------------MAIN--------------------*/
 /***Main contenu***/
 #main {
   position: relative;
-  width: 970px;
+  width: 960px;
   height: 440px;
   top: 180px;
   margin-left: auto;
@@ -158,4 +160,7 @@ button:hover {
   border-radius: 6px;
   background-color: rgba(0, 0, 0, 0.43);
   border: 1px solid grey;
+}
+#main h3 {
+  letter-spacing: 2px;
 }
