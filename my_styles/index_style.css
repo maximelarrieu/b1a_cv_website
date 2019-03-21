@@ -7,6 +7,7 @@ body {
   padding: 0;
   background-image: url("../ressource/fond2.jpg");
   color: white;
+  background-repeat: no-repeat;
 }
 /*--------------------HEADER--------------------*/
 /***Banner's base and positionnement***/
@@ -83,7 +84,7 @@ nav a {
   padding: 15px;
 }
 /*****Links animation*****/
-nav a:after, #footertext a:after {
+nav a:after, footer a:after {
 	content: "";
 	position: absolute;
 	height: 2px;
@@ -97,10 +98,10 @@ nav a:after, #footertext a:after {
 	-webkit-transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
   	transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
 }
-nav a:hover, #footertext a:hover {
+nav a:hover, footer a:hover {
 	color: black;
 }
-nav a:hover:after, #footertext a:hover:after {
+nav a:hover:after, footer a:hover:after {
 	width: 100%;
 }
 /*--------------------CONTENER--------------------*/
@@ -137,52 +138,62 @@ nav a:hover:after, #footertext a:hover:after {
   margin-bottom: 25px;
   font-size: 50px;
 }
-.pdp, p {
+/***Paragraph parameters***/
+.pdp, #contener p {
   float: left;
   display: inline-block;
 }
-p {
+#contener p {
   position: relative;
   text-align: left;
   width: 580px;
   margin-left: 2px;
   font-size: 22px;
 }
+/***Ultim title***/
 .welcomeMsg {
   font-weight: bold;
 }
-.linkedin {
-  float: left;
-  display: inline-block;
-  vertical-align: center;
-  position: absolute;
-  width: 50px;
-  margin-top: 400px;
-  margin-left: -590px;
-}
-.github {
-  position: absolute;
-  margin-top: 395px;
-  margin-left: -450px;
-  width: 53px;
-}
+
 /*--------------------FOOTER--------------------*/
 /***Footer configuration***/
 footer {
   font-family: 'Montserrat', sans-serif;
+  width: 1920px;
   font-size: 12px;
-  height: 48px;
-  margin-top: 365px;
-  text-align: center;
-  position: relative;
+  height: 60px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
   background-color: rgba(92, 96, 99, 0.8);
 }
-#footertext {
-  position: absolute;
-  margin-top: 0px;
-  margin-left: 50%;
+#firstblockfooter, #secondblockfooter, #thirdblockfooter {
+  width: 33%;
+  display: inline-block;
+  font-size: 14px;
 }
-#footertext a {
+#firstblockfooter {
+  text-align: left;
+}
+#secondblockfooter {
+  text-align: center;
+}
+#thirdblockfooter {
+  text-align: right;
+  /*margin-top: 10px;*/
+}
+#thirdblockfooter p {
+  margin-top: 38px;
+  margin-left: -3px;
+}
+#thirdblockfooter img {
+  position: absolute;
+  width: 30px;
+  margin-left: -140px;
+  margin-top: 6px;
+}
+footer a {
+  weight: bold;
   text-decoration: none;
   color: #fff;
   position: relative;

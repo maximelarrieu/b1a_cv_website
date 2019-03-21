@@ -70,7 +70,7 @@ ul {
 li {
   display: inline-block;
 }
-a {
+nav a {
   display: inline-block;
   text-decoration: none;
 	color: #fff;
@@ -83,7 +83,7 @@ a {
   padding: 15px;
 }
 /*****Links animation*****/
-a:after {
+nav a:after, footer a:after {
 	content: "";
 	position: absolute;
 	height: 2px;
@@ -97,10 +97,10 @@ a:after {
 	-webkit-transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
   	transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
 }
-a:hover {
+nav a:hover, footer a:hover {
 	color: black;
 }
-a:hover:after {
+nav a:hover:after, footer a:hover:after {
 	width: 100%;
 }
 /*--------------------CONTENER--------------------*/
@@ -199,4 +199,49 @@ input[type="submit"]:before {
 }
 input[type="submit"]:hover:before {
   opacity: 1;
+}
+
+/*--------------------FOOTER--------------------*/
+/***Footer configuration***/
+footer {
+  font-family: 'Montserrat', sans-serif;
+  width: 1920px;
+  font-size: 12px;
+  height: 60px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(92, 96, 99, 0.8);
+}
+#firstblockfooter, #secondblockfooter, #thirdblockfooter {
+  width: 33%;
+  display: inline-block;
+  font-size: 14px;
+}
+#firstblockfooter {
+  text-align: left;
+}
+#secondblockfooter {
+  text-align: center;
+}
+#thirdblockfooter {
+  text-align: right;
+  /*margin-top: 10px;*/
+}
+#thirdblockfooter p {
+  margin-top: 38px;
+}
+#thirdblockfooter img {
+  position: absolute;
+  width: 30px;
+  margin-left: -140px;
+  margin-top: 6px;
+}
+footer a {
+  weight: bold;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }

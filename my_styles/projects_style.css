@@ -83,7 +83,7 @@ nav a {
   padding: 15px;
 }
 /*****Links animation*****/
- nav a:after, #contener a:after, #main a:after {
+ nav a:after, #contener a:after, #main a:after, footer a:after {
 	content: "";
 	position: absolute;
 	height: 2px;
@@ -97,11 +97,11 @@ nav a {
 	-webkit-transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
   	transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
 }
-nav a:hover, #contener a:hover, #main a:hover {
+nav a:hover, #contener a:hover, #main a:hover, footer a:hover {
 	color: black;
   font-weight: bold;
 }
-nav a:hover:after, #contener a:hover:after, #main a:hover:after {
+nav a:hover:after, #contener a:hover:after, #main a:hover:after, footer a:hover:after {
 	width: 100%;
 }
 /*--------------------CONTENER--------------------*/
@@ -140,7 +140,7 @@ nav a:hover:after, #contener a:hover:after, #main a:hover:after {
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 10px;
+  margin-bottom: 70px;
   padding-left: 10px;
   border-radius: 6px;
   background-color: rgba(0, 0, 0, 0.43);
@@ -162,6 +162,7 @@ nav a:hover:after, #contener a:hover:after, #main a:hover:after {
 }
 /***Icons images projects***/
 #main img {
+  float: left;
   margin-top: 15px;
   position: relative;
   width: 18%;
@@ -173,35 +174,57 @@ nav a:hover:after, #contener a:hover:after, #main a:hover:after {
   display: inline-block;
   vertical-align: top;
 }
-<<<<<<< HEAD
-
-
-
-
-
-<?php
-
-if (isset($_POST['submit'])) {
-  $name = $_POST['nom'];
-  $mailFrom = $_POST['email'];
-  $message= $_POST['message'];
-
-  $mailTo = "maxime.larrieu@ynov.com";
-  $headers = "MIME Version 1.0\r\n"
-  $headers .= "From: ".$mailFrom."\r\n"."X-Mailer: PHP/".phpversion();
-  $headers .= "Content-type: text; charset=UTF-8\r\n";
-  $txt = "Message contact depuis maximelarrieu.website from ".$name.".\n\n".$message;
-  $subject = "Message depuis site CV"
-  echo "Message envoyé"
-
-  mail($mailTo, $subject, $txt, $headers);
-}
-
-?>
-=======
 /***Project description***/
 .description {
   width: 750px;
   margin-left: 15px;
 }
->>>>>>> 1d3d5bde9a6de2a730c41bee3b526d6a1fa1a2d4
+/*--------------------FOOTER--------------------*/
+/***Footer configuration***/
+footer {
+  font-family: 'Montserrat', sans-serif;
+  width: 1920px;
+  font-size: 12px;
+  height: 60px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(92, 96, 99, 0.8);
+}
+/***Three parts of footer***/
+#firstblockfooter, #secondblockfooter, #thirdblockfooter {
+  width: 33%;
+  display: inline-block;
+  font-size: 14px;
+}
+#firstblockfooter {
+  text-align: left;
+}
+#firstblockfooter p {
+  margin-left: 15px;
+}
+#secondblockfooter {
+  text-align: center;
+}
+#thirdblockfooter {
+  text-align: right;
+}
+#thirdblockfooter p {
+  margin-right: 15px;
+  margin-top: 38px;
+}
+#thirdblockfooter img {
+  display: flex;
+  position: absolute;
+  width: 30px;
+  margin-top: 6px;
+  margin-left: 460px;
+}
+footer a {
+  weight: bold;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
