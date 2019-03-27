@@ -1,3 +1,22 @@
+<?php
+  $monfichier = fopen('../historymsg.txt', 'ar+');
+  $date = date('d/m/Y h:i:s');
+  $contactname = $_POST['nom'];
+  $contactmail = $_POST['email'];
+  $spaces = "\r\n";
+  $separators = "*-*-*-*-*-*-*-*-*-*-*-*-*-*";
+
+  fwrite($monfichier, $date);
+  fwrite($monfichier, $spaces);
+  fwrite($monfichier, $contactname);
+  fwrite($monfichier, $spaces);
+  fwrite($monfichier, $contactmail);
+  fwrite($monfichier, $spaces);
+  fwrite($monfichier, $separators);
+  fwrite($monfichier, $spaces);
+
+  fclose($monfichier);
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
