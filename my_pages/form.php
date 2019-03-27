@@ -21,14 +21,8 @@
         </ul>
       </nav>
     </header>
-    <div id="contener">
-      <h2>ME CONTACTER</h2>
-      <form method="post" action="http://localhost/my_cv/my_pages/form.php">
-        <input type="text" name="nom" id="nom" placeholder="Votre nom..."/>
-        <input type="text" name="email" id="email" placeholder="Votre email..."/>
-        <textarea name="message" id="message" placeholder="Votre message..."></textarea>
-        <input type="submit" value="Envoyer"/>
-      </form>
+    <div id="response">
+      <h4>Merci pour votre message <?php echo strip_tags($_POST['nom']); ?></h4>
     </div>
     <footer>
       <div id="firstblockfooter">

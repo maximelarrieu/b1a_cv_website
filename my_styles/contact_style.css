@@ -5,8 +5,10 @@ body {
   width: 1920px;
   margin: 0;
   padding: 0;
-  background-image: url("../ressource/fond2.jpg");
+  background-image: url("../ressources/background.png");
   color: white;
+  background-repeat: cover;
+  background-color: rgba(75, 79, 77, 0.78);
 }
 /*--------------------HEADER--------------------*/
 /***Banner's base and positionnement***/
@@ -114,8 +116,8 @@ nav a:hover:after, footer a:hover:after {
   position: relative;
   top: 150px;
   border-radius: 6px;
-  background-color: rgba(0, 0, 0, 0.43);
-  border: 1px solid grey;
+  background-color: rgba(75, 75, 75, 0.38);
+  border: 2px solid grey;
 }
 #contener h2 {
   margin-bottom: 60px;
@@ -200,7 +202,19 @@ input[type="submit"]:before {
 input[type="submit"]:hover:before {
   opacity: 1;
 }
-
+/***Form answer***/
+#response {
+  width: 950px;
+  height: 529px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  position: relative;
+  top: 150px;
+  border-radius: 6px;
+  background-color: rgba(75, 75, 75, 0.38);
+  border: 2px solid grey;
+}
 /*--------------------FOOTER--------------------*/
 /***Footer configuration***/
 footer {

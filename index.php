@@ -4,31 +4,31 @@
 <head>
   <meta charset="utf-8">
   <title>Titre de la page</title>
-  <link rel="stylesheet" href="../my_styles/contact_style.css">
+  <link rel="stylesheet" href="my_styles/index_style.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 
 <body>
     <header>
       <h1>Maxime Larrieu</h1>
-      <h4>Informatic student</h4>
+      <h4><?php echo date('d/m/Y'); ?></h4>
       <nav>
         <ul>
-          <li><a href="../index.php">HOME</a></li>
-          <li><a href="cv.php">CV</a></li>
-          <li><a href="projects.php">PROJETS</a></li>
-          <li><a href="contact.php">CONTACT</a></li>
+          <li><a href="index.php">HOME</a></li>
+          <li><a href="my_pages/cv.php">CV</a></li>
+          <li><a href="my_pages/projects.php">PROJETS</a></li>
+          <li><a href="my_pages/contact.php">CONTACT</a></li>
         </ul>
       </nav>
     </header>
     <div id="contener">
-      <h2>ME CONTACTER</h2>
-      <form method="post" action="http://localhost/my_cv/my_pages/form.php">
-        <input type="text" name="nom" id="nom" placeholder="Votre nom..."/>
-        <input type="text" name="email" id="email" placeholder="Votre email..."/>
-        <textarea name="message" id="message" placeholder="Votre message..."></textarea>
-        <input type="submit" value="Envoyer"/>
-      </form>
+      <img class="pdp" src="ressources/img.jpg" alt="Photo de profil" />
+      <h2>BONJOUR,</h2>
+      <p>Maxime Larrieu, 20 ans. Résidant Bordeaux.</p>
+      <p>Jeune passionné d'informatique et de matériel informatique,
+      actuellement étudiant en école d'informatique.</p>
+      <p class="welcomeMsg">Bienvenue sur mon CV en ligne.</p>
+
     </div>
     <footer>
       <div id="firstblockfooter">
@@ -38,11 +38,11 @@
         N'hésitez pas à <a class="contactme" href="contact.php">me contacter</a> !
       </div>
       <div id="thirdblockfooter">
-        <img src="../ressources/linkedin.png" />
+        <img src="ressources/linkedin.png" />
         <p>Retrouvez-moi également sur <a href="https://www.linkedin.com/in/maxime-larrieu-b563a5159/">Linkedin</a></p>
       </div>
     </footer>
-  <script src="../script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

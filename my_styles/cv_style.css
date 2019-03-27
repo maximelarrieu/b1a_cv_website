@@ -5,8 +5,10 @@ body {
   width: 1920px;
   margin: 0;
   padding: 0;
-  background-image: url("../ressource/fond2.jpg");
+  background-image: url("../ressources/background.png");
   color: white;
+  background-repeat: cover;
+  background-color:black;
 }
 /*--------------------HEADER--------------------*/
 /***Banner's base and positionnement***/
@@ -112,8 +114,8 @@ nav a:hover:after, footer a:hover:after {
   margin-right: auto;
   position: relative;
   top: 150px;
-  border: 1px solid grey;
-  background-color: rgba(0, 0, 0, 0.43);
+  background-color: rgba(75, 75, 75, 0.38);
+  border: 2px solid grey;
   border-radius: 6px;
 }
 #contener h2, img, button {
@@ -129,6 +131,14 @@ nav a:hover:after, footer a:hover:after {
   letter-spacing: 1px;
   color: white;
   font-weight: bold;
+  text-transform: uppercase;
+}
+#contener h3 {
+  position: absolute;
+  top: 64px;
+  font-size: 15px;
+  margin-left: 267px;
+  color: rgb(52, 95, 145);
 }
 /***Button download config***/
 button {
@@ -152,21 +162,23 @@ button:hover {
 #main {
   position: relative;
   width: 960px;
-  height: 840px;
+  height: 1240px;
   top: 180px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 70px;
   padding-left: 10px;
   border-radius: 6px;
-  background-color: rgba(0, 0, 0, 0.43);
-  border: 1px solid grey;
+  background-color: rgba(75, 75, 75, 0.38);
+  border: 2px solid grey;
 }
 #main h3 {
   letter-spacing: 2px;
 }
+
 /***EDUCATION***/
 .education {
-  margin-top: 40px;
+  margin-top: 30px;
   text-align: center;
   display: inline-block;
   vertical-align: top;
@@ -178,6 +190,7 @@ button:hover {
   text-transform: uppercase;
   font-size: 18px;
   margin-top: 4px;
+  color: rgb(96, 100, 185);
 }
 .education h5 {
   margin-top: -15px;
@@ -185,14 +198,109 @@ button:hover {
 }
 .education h6 {
   margin-top: -10px;
+  color: rgb(0, 0, 0);
 }
 
+/***EXP PRO***/
+.pro {
+  margin-top: 30px;
+  text-align: left;
+  text-align: center;
+  float: left;
+  display: inline-block;
+  width: 49%;
+  margin-bottom: 30px;
+}
+.pro h4 {
+  color: rgb(96, 100, 185);
+  margin: 0;
+}
+.pro h5 {
+  margin-top: 20px;
+}
+.pro h6 {
+  color: rgb(0, 0, 0);
+  margin-top: -20px;
+}
 
+/***SKILLS***/
+/***Skill bars***/
+.skillbar {
+  position: relative;
+  margin-top: 30px;
+  width: 99%;
+  height: 40px;
+  background: #eeeeee;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px #222;
+}
+.title {
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  padding-left: 10px;
+  float: left;
+  font-weight: bold;
+  color: black;
+  line-height: 2.5;
+  z-index: 10000;
+  border-top-left-radius: 5px;
+}
+.value_progressing {
+  position: relative;
+  float: right;
+  padding-right: 10px;
+  line-height: 2.5;
+  font-weight: bold;
+  color: #455a64;
+  z-index: 10000;
+}
+.progress {
+  height: 40px;
+  position: absolute;
+  border-radius: 5px;
+  box-shadow: 2px 0 2px #555;
+}
+.htmlColor {
+  background: rgba(57, 45, 164, 0.72);
+}
+.html {
+  background: rgba(43, 151, 199, 0.5);
+  width: 90%;
+}
+.cssColor {
+  background: rgba(91, 74, 11, 0.62);
+}
+.css {
+  background: rgba(88, 70, 0, 0.5);
+  width: 90%;
+}
+.jsColor {
+  background: rgb(68, 159, 58, 0.64);
+}
+.js {
+  background: rgba(68, 159, 58, 0.5);
+  width: 70%;
+}
+.cColor {
+  background: rgba(90, 10, 128, 0.72);
+}
+.c {
+  background: rgba(91, 43, 140, 0.5);
+  width: 80%;
+}
+.linuxColor {
+  background: rgba(223, 206, 19, 0.76)
+}
+.linux {
+  background: rgba(195, 217, 29, 0.57);
+  width: 80%;
+}
 /*--------------------FOOTER--------------------*/
 /***Footer configuration***/
 footer {
   font-family: 'Montserrat', sans-serif;
-  margin-top: 20px;
   width: 1920px;
   font-size: 12px;
   height: 60px;
@@ -214,7 +322,6 @@ footer {
 }
 #thirdblockfooter {
   text-align: right;
-  /*margin-top: 10px;*/
 }
 #thirdblockfooter p {
   margin-top: 38px;
