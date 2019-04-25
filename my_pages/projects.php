@@ -3,18 +3,22 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Titre de la page</title>
+  <title>Projets - Maxime Larrieu</title>
   <link rel="stylesheet" href="../my_styles/projects_style.css">
+  <link rel="stylesheet" href="../my_styles/mainwrapper.css">
+  <link rel="stylesheet" href="../my_styles/header.css">
+  <link rel="stylesheet" href="../my_styles/footer.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
 </head>
 
 <body>
     <header>
       <h1>Maxime Larrieu</h1>
-      <h4>Informatic student</h4>
+      <h4><?php echo date('d/m/Y'); ?></h4>
       <nav>
         <ul>
-          <li><a href="../index.php">HOME</a></li>
+          <li><a href="../index.php">ACCUEIL</a></li>
           <li><a href="cv.php">CV</a></li>
           <li><a href="projects.php">PROJETS</a></li>
           <li><a href="contact.php">CONTACT</a></li>
@@ -66,7 +70,6 @@
         N'hésitez pas à <a class="contactme" href="contact.php">me contacter</a> !
       </div>
       <div id="thirdblockfooter">
-        <img src="../ressources/linkedin.png" alt="Logo Linkedin" />
         <p>Retrouvez-moi également sur <a href="https://www.linkedin.com/in/maxime-larrieu-b563a5159/">Linkedin</a></p>
       </div>
     </footer>
