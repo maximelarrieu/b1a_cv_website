@@ -1,108 +1,3 @@
-/*--------------------MAINWRAPPER--------------------*/
-/***Generals parameters, my page's base***/
-body {
-  font-family: 'Montserrat', sans-serif;
-  width: 1920px;
-  margin: 0;
-  padding: 0;
-  background-image: url("../ressource/fond2.jpg");
-  color: white;
-}
-/*--------------------HEADER--------------------*/
-/***Banner's base and positionnement***/
-/*****Implementation of the animation linear-gradient*****/
-header {
-  position: absolute;
-  width: 1920px;
-  height: 150px;
-  top: -40px;
-  left: 0;
-  background: linear-gradient(30deg, #3f51b5, #00bcd4);
-  animation: animate 20s linear infinite;
-}
-/*****Animation's frames*****/
-@keyframes animate {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  50% {
-    filter: hue-rotate(360deg);
-  }
-  100% {
-    filter: hue-rotate(0deg);
-  }
-}
-/*****Title placement*****/
-header h1 {
-  position: absolute;
-  font-size: 30px;
-  margin-left: 23%;
-  margin-top: 4.6%;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  color: white;
-}
-header h4 {
-  position: absolute;
-  bottom: 0;
-  color: white;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-size: 12px;
-  margin-left: 23%;
-  letter-spacing: 2px;
-}
-/***The navbar's implementation***/
-nav {
-  position: absolute;
-  width: 400px;
-  margin-left: 57%;
-  bottom: 0;
-}
-/*****Horizontal bar*****/
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: transparent;
-}
-li {
-  display: inline-block;
-}
-nav a {
-  display: inline-block;
-  text-decoration: none;
-	color: #fff;
-	font-size: 15px;
-	letter-spacing: 2px;
-	text-transform: uppercase;
-	position: relative;
-  -webkit-transition: all 0.4s ease;
-	transition: all 0.4s ease;
-  padding: 15px;
-}
-/*****Links animation*****/
-nav a:after, footer a:after {
-	content: "";
-	position: absolute;
-	height: 2px;
-	background-color: black;
-	width: 0;
-	left: 50%;
-	bottom: 0;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-	transform: translateX(-50%);
-	-webkit-transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
-  	transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
-}
-nav a:hover, footer a:hover {
-	color: black;
-}
-nav a:hover:after, footer a:hover:after {
-	width: 100%;
-}
 /*--------------------CONTENER--------------------*/
 /***Contener's base***/
 #contener {
@@ -112,11 +7,11 @@ nav a:hover:after, footer a:hover:after {
   margin-right: auto;
   position: relative;
   top: 150px;
-  border: 1px solid grey;
-  background-color: rgba(0, 0, 0, 0.43);
+  background-color: rgba(75, 75, 75, 0.38);
+  border: 2px solid grey;
   border-radius: 6px;
 }
-#contener h2, img, button {
+#contener h2, #contener img, button {
   float: left;
   display: inline-block;
   vertical-align: top;
@@ -127,14 +22,50 @@ nav a:hover:after, footer a:hover:after {
   margin-left: 28px;
   font-size: 29px;
   letter-spacing: 1px;
-  color: white;
+  color: rgb(125, 125, 125);
   font-weight: bold;
+  text-transform: uppercase;
+}
+#contener h3 {
+  position: absolute;
+  top: 64px;
+  font-size: 15px;
+  margin-left: 267px;
+  color: rgb(15, 32, 65);
+}
+#intro {
+  position: absolute;
+  width: 450px;
+  margin-left: 261px;
+  margin-top: 120px;
+}
+#lkRedirect {
+  color: rgb(125, 125, 125);
+  position: absolute;
+  width: 170px;
+  margin-left: 783px;
+  margin-top: 120px;
+  text-align: center;
+}
+#lkRedirect a {
+  position: relative;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(125, 125, 125);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+#lkRedirect img {
+  width: 50px;
+  margin-left: 60px;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 /***Button download config***/
 button {
   font-family: 'Montserrat', sans-serif;
   position: absolute;
-  background-color: rgb(52, 95, 145);
+  background-color: rgb(128, 128, 128, 0.77);
   border: none;
   color: white;
   padding: 12px 30px;
@@ -145,28 +76,35 @@ button {
   right: 20px;
 }
 button:hover {
-  background-color: rgb(52, 95, 145, 0.4);
+  background-color: rgba(140, 140, 140);
+}
+button a {
+  text-decoration: none;
+  color: white;
 }
 /*--------------------MAIN--------------------*/
 /***Main contenu***/
 #main {
   position: relative;
   width: 960px;
-  height: 840px;
+  height: 1200px;
   top: 180px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 70px;
   padding-left: 10px;
   border-radius: 6px;
-  background-color: rgba(0, 0, 0, 0.43);
-  border: 1px solid grey;
+  background-color: rgba(75, 75, 75, 0.38);
+  border: 2px solid grey;
 }
 #main h3 {
   letter-spacing: 2px;
 }
+
 /***EDUCATION***/
 .education {
-  margin-top: 40px;
+  position: relative;
+  margin-top: 30px;
   text-align: center;
   display: inline-block;
   vertical-align: top;
@@ -178,14 +116,18 @@ button:hover {
   text-transform: uppercase;
   font-size: 18px;
   margin-top: 4px;
+  color: rgb(158, 158, 158);
 }
 .education h5 {
   margin-top: -15px;
-  weight: bold;
+  font-weight: bold;
 }
 .education h6 {
   margin-top: -10px;
+  color: rgb(15, 32, 65);
+  font-size: 13px;
 }
+<<<<<<< HEAD
 /***EXP PRO***/
 .proexp {
     width: 100%;
@@ -208,34 +150,121 @@ footer {
 /***The three footer block***/
 #firstblockfooter, #secondblockfooter, #thirdblockfooter {
   width: 33%;
-  display: inline-block;
-  font-size: 14px;
-}
-#firstblockfooter {
+=======
+
+/***EXP PRO***/
+.pro {
+  margin-top: 30px;
   text-align: left;
+  text-align: center;
+  float: left;
+>>>>>>> 24d8164d504d6ad3580a6f07039b98dbf041d4c8
+  display: inline-block;
+  width: 49%;
+  margin-bottom: 30px;
 }
-#secondblockfooter {
+.pro h4 {
+  text-transform: uppercase;
+  color: rgb(158, 158, 158);
+  margin: 0;
+}
+.pro h5 {
+  margin-top: 30px;
+}
+.pro h6 {
+  color: rgb(15, 32, 65);
+  margin-top: -10px;
+  margin-bottom: -15px;
+  font-size: 13px;
+}
+
+.date {
   text-align: center;
 }
-#thirdblockfooter {
-  text-align: right;
-  /*margin-top: 10px;*/
+
+/***SKILLS***/
+/***Skill bars***/
+.skillbar {
+  position: relative;
+  margin-top: 30px;
+  width: 99%;
+  height: 30px;
+  background: #eeeeee;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px #222;
 }
-#thirdblockfooter p {
-  margin-top: 38px;
-}
-#thirdblockfooter img {
+.title {
   position: absolute;
-  width: 30px;
-  margin-left: -140px;
-  margin-top: 6px;
+  width: 100px;
+  height: 30px;
+  padding-left: 10px;
+  float: left;
+  font-weight: bold;
+  color: black;
+  line-height: 2.5;
+  z-index: 10000;
+  border-top-left-radius: 5px;
 }
+<<<<<<< HEAD
 /***My footer link***/
 footer a {
   weight: bold;
   text-decoration: none;
   color: #fff;
+=======
+.value_progressing {
+>>>>>>> 24d8164d504d6ad3580a6f07039b98dbf041d4c8
   position: relative;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  float: right;
+  padding-right: 10px;
+  line-height: 2.5;
+  font-weight: bold;
+  color: #455a64;
+  z-index: 10000;
+}
+.progress {
+  height: 30px;
+  position: absolute;
+  border-radius: 5px;
+  box-shadow: 2px 0 2px #555;
+}
+.htmlColor {
+  background: rgba(38, 32, 96, 0.72);
+}
+.html {
+  background: rgba(94, 94, 94, 0.5);
+}
+.cssColor {
+  background: rgba(38, 32, 96, 0.72);
+}
+.css {
+  background: rgba(94, 94, 94, 0.5);
+}
+.jsColor {
+  background: rgba(38, 32, 96, 0.72);
+}
+.js {
+  background: rgba(94, 94, 94, 0.5);
+}
+.cColor {
+  background: rgba(38, 32, 96, 0.72);
+}
+.c {
+  background: rgba(94, 94, 94, 0.5);
+}
+.linuxColor {
+  background: rgba(38, 32, 96, 0.72);
+}
+.linux {
+  background: rgba(94, 94, 94, 0.5);
+}
+/***HOBBIES***/
+#hobbies {
+  height: 100px;
+}
+#hobbies img {
+  display: inline-block;
+  width: 100px;
+  padding-left: 100px;
 }

@@ -1,50 +1,79 @@
 <?php
-/* D'abord on fixe la valeur par défaut des messages d'erreur et des variables des inputs */
-$erreurnom = $erreuremail = $erreurmessage = $messageenvoi = $nom = $prenom = $email = $message =  '';
+  if(isset($_POST['mailform'])) {
+    if(!empty($_POST['nom']) AND !empty($_POST['email']) AND !empty($_POST['message'])) {
+      $header="MIME-Version: 1.0\r\n";
+      $header="From:'maximelarrieu.website'<contact@maximelarrieu.website";
+      $header="Content-Type:text/html; charset='utf-8'";
+      $header="Content-Transfer-Encoding: 8bit";
 
-/* Ensuite on vérifie si le formulaire a été soumis et on valide les valeurs récupérées */
-if (!empty($_POST['submit'])) {
-
-  // On récupère les données envoyées par le formulaire
-  $nom = $_POST['nom'];
-  $prenom = $_POST['prenom'];
-  $email = $_POST['email'];
-  $message = $_POST['message'];
-  $valid = true;
-  $envoi = false;
-  // test du nom
-  if (empty($nom)) {
-    $valid = false;
-    $erreurnom = '<br><span class="error">Vous n\'avez pas mis votre nom</span><br>';
-  }
-  // Test format e-mail
-  if (!preg_match("/^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/i", $email)) {
-    $valid = false;
-    $erreuremail = '<br><span class="error">Email non valide</span><br>';
-  }
-  // Test message
-  if (empty($message)) {
-        $valid = false;
-        $erreurmessage = '<br><span class="error">Vous n\'avez pas mis votre message</span><br>';
-    }
-
-  /* Si tout est ok, on envoie le courriel */
-  if ($valid) {
-    $to = "contact@wishbone-design.com";
-    $sujet = "Demande de contact";
-    $texte = "Nom : $nom\n
-    Email : $email\n
-    Message : $message";
-    $headers = "From: $nom\n
-    Reply-To: $email";
-    // Envoi du courriel - on vérifie si le mail est envoyé en mettant la fonction mail() dans un if pour voir si la valeur retournée est bien true (valeur envoyée par cette fonction si le mail a été envoyé)
-    if (mail($to,$sujet,$texte,$headers)) {
-      $envoi = true;
-      $messageenvoi =  '<span class="ok">Votre message a bien été envoyé, merci !</span><br>';
+      $message="
+      <html>
+        <body>
+          <b>Nom de l'expediteur : ".$_POST['nom']."</b>
+          <b>Mail de l'expediteur : ".$_POST['email']."</b>
+          <b>Message de l'expediteur : ".nl2br($_POST['message'])."</b>
+        </body>
+      </html>";
+      mail("maxime.larrieu@ynov.com", "CONTACT - maximelarrieu.website", $message, $header);
     }
     else {
-      $messageenvoi =  '<span class="error">Désolé, une erreur est survenue lors de l\'envoi du message ! Veuillez essayer ultérieurement.</span><br>';
+      $msg="Tous les champs doivent être complétées.";
     }
   }
-}
 ?>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Contact - Maxime Larrieu</title>
+  <link rel="stylesheet" href="../my_styles/mainwrapper.css">
+  <link rel="stylesheet" href="../my_styles/header.css">
+  <link rel="stylesheet" href="../my_styles/footer.css">
+  <link rel="stylesheet" href="../my_styles/contact_style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
+</head>
+
+<body>
+    <header>
+      <h1>Maxime Larrieu</h1>
+      <h4><?php echo date('d/m/Y'); ?></h4>
+      <nav>
+        <ul>
+          <li><a href="../index.php">ACCUEIL</a></li>
+          <li><a href="cv.php">CV</a></li>
+          <li><a href="projects.php">PROJETS</a></li>
+          <li><a href="contact.php">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="contener">
+      <h2>ME CONTACTER</h2>
+      <form method="POST" action="form.php">
+        <input type="text" name="nom" id="nom" placeholder="Votre nom..."/>
+        <input type="text" name="email" id="email" placeholder="Votre email..."/>
+        <textarea name="message" id="message" placeholder="Votre message..."></textarea>
+        <input type="submit" value="Envoyer" name="mailform" />
+        <?php
+          if(isset($msg)) {
+            echo $msg;
+          }
+        ?>
+      </form>
+    </div>
+    <footer>
+      <div id="firstblockfooter">
+        Ynov @ <span id="current-year"></span>
+      </div>
+      <div id="secondblockfooter">
+        N'hésitez pas à <a class="contactme" href="contact.php">me contacter</a> !
+      </div>
+      <div id="thirdblockfooter">
+        <p>Retrouvez-moi également sur <a href="https://www.linkedin.com/in/maxime-larrieu-b563a5159/">Linkedin</a></p>
+      </div>
+    </footer>
+  <script src="../script.js"></script>
+</body>
+
+</html>

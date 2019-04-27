@@ -1,0 +1,102 @@
+/*--------------------HEADER--------------------*/
+/***Banner's base and positionnement***/
+/*****Implementation of the animation linear-gradient*****/
+header {
+  position: absolute;
+  width: 100%;
+  height: 130px;
+  top: -40px;
+  left: 0;
+  background: linear-gradient(30deg, #3f51b5, #00bcd4);
+  animation: animate 20s linear infinite;
+}
+/*****Animation's frames*****/
+@keyframes animate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(360deg);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
+/*****Title placement*****/
+header h1 {
+  position: relative;
+  font-size: 30px;
+  margin-top: 68px;
+  margin-left: 21%;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: white;
+}
+header h4 {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-left: 21.1%;
+  letter-spacing: 2px;
+}
+/***The navbar's implementation***/
+nav {
+  position: absolute;
+  width: 470px;
+  margin-left: 56%;
+  bottom: 0;
+  /*border: 1px solid;*/
+}
+/*****Horizontal bar*****/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+li {
+  display: inline-block;
+}
+nav a {
+  display: inline-block;
+  text-decoration: none;
+	color: #fff;
+	font-size: 15px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	position: relative;
+  -webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+  padding: 15px;
+}
+/*****Links animation*****/
+nav a:after, footer a:after, #contener a:after, #main a:after, #lkRedirect a:after {
+	content: "";
+	position: absolute;
+	height: 2px;
+	background-color: black;
+	width: 0;
+	left: 50%;
+	bottom: 0;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	-webkit-transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+  	transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+}
+nav a:hover, footer a:hover, #contener a:hover, #main a:hover, #lkRedirect a:hover {
+	color: black;
+}
+nav a:hover:after, footer a:hover:after, #contener a:hover:after, #main a:hover:after, #lkRedirect a:hover:after {
+	width: 100%;
+}
+/***PHONE COMPTABILITIES***/
+@media only screen (max-width: 767px) and (orientation: portrait) {
+  header {
+    width: 767px;
+  }
+}

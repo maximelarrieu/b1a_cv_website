@@ -1,202 +1,101 @@
-/*--------------------MAINWRAPPER--------------------*/
-/***Generals parameters, my page's base***/
-body {
-  font-family: 'Montserrat', sans-serif;
-  width: 1920px;
-  margin: 0;
-  padding: 0;
-  background-image: url("../ressource/fond2.jpg");
-  color: white;
-  background-repeat: no-repeat;
-}
-/*--------------------HEADER--------------------*/
-/***Banner's base and positionnement***/
-/*****Implementation of the animation linear-gradient*****/
-header {
-  position: absolute;
-  width: 1920px;
-  height: 150px;
-  top: -40px;
-  left: 0;
-  background: linear-gradient(30deg, #3f51b5, #00bcd4);
-  animation: animate 20s linear infinite;
-}
-/*****Animation's frames*****/
-@keyframes animate {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  50% {
-    filter: hue-rotate(360deg);
-  }
-  100% {
-    filter: hue-rotate(0deg);
-  }
-}
-/*****Title placement*****/
-header h1 {
-  position: absolute;
-  font-size: 30px;
-  margin-top: 4.6%;
-  margin-left: 23%;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  color: white;
-}
-header h4 {
-  position: absolute;
-  bottom: 0;
-  color: white;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-size: 12px;
-  margin-left: 23%;
-  letter-spacing: 2px;
-}
-/***The navbar's implementation***/
-nav {
-  position: absolute;
-  width: 400px;
-  margin-left: 57%;
-  bottom: 0;
-}
-/*****Horizontal bar*****/
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: transparent;
-}
-li {
-  display: inline-block;
-}
-nav a {
-  display: inline-block;
-  text-decoration: none;
-	color: #fff;
-	font-size: 15px;
-	letter-spacing: 2px;
-	text-transform: uppercase;
-	position: relative;
-  -webkit-transition: all 0.4s ease;
-	transition: all 0.4s ease;
-  padding: 15px;
-}
-/*****Links animation*****/
-nav a:after, footer a:after {
-	content: "";
-	position: absolute;
-	height: 2px;
-	background-color: black;
-	width: 0;
-	left: 50%;
-	bottom: 0;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-	transform: translateX(-50%);
-	-webkit-transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
-  	transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
-}
-nav a:hover, footer a:hover {
-	color: black;
-}
-nav a:hover:after, footer a:hover:after {
-	width: 100%;
-}
 /*--------------------CONTENER--------------------*/
 /***Contener's base***/
-#contener {
-  color: white;
-  width: 970px;
-  height: 500px;
+#contenerr {
+  width: 870px;
+  height: 460px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
   top: 150px;
   border-radius: 6px;
-  background-color: rgba(0, 0, 0, 0.43);
   letter-spacing: 2px;
-  border: 1px solid grey;
+  background-color: rgba(75, 75, 75, 0.38);
+  border: 2px solid grey;
 }
 /***Image parameters***/
 .pdp {
   border: 1px solid;
-  height: 330px;
+  height: 300px;
   margin-left: 20px;
 }
 /***Contener text***/
-#contener h2, .pdp {
+#contenerr h2, .pdp {
   float: left;
   display: inline-block;
   vertical-align: top;
   margin: 20px;
   font-weight: bold;
 }
-#contener h2 {
+#contenerr h2 {
   margin-left: -5px;
   margin-bottom: 25px;
-  font-size: 50px;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgb(125, 125, 125);
 }
 /***Paragraph parameters***/
-.pdp, #contener p {
+.pdp, #contenerr p {
   float: left;
   display: inline-block;
 }
-#contener p {
+#contenerr p {
   position: relative;
   text-align: left;
-  width: 580px;
+  width: 475px;
   margin-left: 2px;
-  font-size: 22px;
+  font-size: 18px;
 }
 /***Ultim title***/
-.welcomeMsg {
-  font-weight: bold;
+.bottomTitle {
+  position: absolute;
+  margin-top: 280px;
+  margin-left: 340px;
 }
-
-/*--------------------FOOTER--------------------*/
-/***Footer configuration***/
-footer {
-  font-family: 'Montserrat', sans-serif;
-  width: 1920px;
-  font-size: 12px;
-  height: 60px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  background-color: rgba(92, 96, 99, 0.8);
+.bottomTitle p {
+  color: rgb(15, 32, 65);
+  font-size: 15px;
 }
-#firstblockfooter, #secondblockfooter, #thirdblockfooter {
-  width: 33%;
-  display: inline-block;
-  font-size: 14px;
+/***Contener's bottom***/
+#bottom {
+  position: relative;
+  width: 820px;
+  height: 100px;
+  margin-top: 335px;
+  margin-left: auto;
+  margin-right: auto;
 }
-#firstblockfooter {
+.left {
+  position: absolute;
+  width: 30%;
+  margin-top: 20px;
   text-align: left;
 }
-#secondblockfooter {
-  text-align: center;
+.lenovo {
+  width: 80px;
+  margin-left: 80px;
 }
-#thirdblockfooter {
-  text-align: right;
-  /*margin-top: 10px;*/
-}
-#thirdblockfooter p {
-  margin-top: 38px;
-  margin-left: -3px;
-}
-#thirdblockfooter img {
-  position: absolute;
-  width: 30px;
-  margin-left: -140px;
-  margin-top: 6px;
-}
-footer a {
-  weight: bold;
-  text-decoration: none;
-  color: #fff;
+.mid {
   position: relative;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  width: 30%;
+  margin-top: -6px;
+  text-align: center;
+  display: inline-block;
+}
+.fedora {
+  width: 50px;
+  margin-top: 15px;
+  margin-bottom: -15px;
+}
+.right {
+  position: relative;
+  width: 30%;
+  margin-top: 20px;
+  text-align: right;
+  display: inline-block;
+}
+.atom {
+  width: 35px;
+  margin-top: -10px;
+  margin-right: 17px;
 }

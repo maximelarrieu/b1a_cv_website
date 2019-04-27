@@ -1,0 +1,45 @@
+/*--------------------FOOTER--------------------*/
+/***Footer configuration***/
+footer {
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  font-size: 12px;
+  height: 40px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(92, 96, 99, 0.8);
+}
+#firstblockfooter, #secondblockfooter, #thirdblockfooter {
+  width: 33%;
+  display: inline-block;
+  font-size: 14px;
+}
+#firstblockfooter {
+  text-align: left;
+}
+#secondblockfooter {
+  text-align: center;
+}
+#thirdblockfooter {
+  text-align: right;
+  /*margin-top: 10px;*/
+}
+#thirdblockfooter p {
+  margin-top: 15px;
+  margin-left: -3px;
+}
+#thirdblockfooter img {
+  position: absolute;
+  width: 30px;
+  margin-left: -140px;
+  margin-top: 6px;
+}
+footer a {
+  weight: bold;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
