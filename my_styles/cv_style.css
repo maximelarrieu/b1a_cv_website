@@ -186,7 +186,11 @@ button:hover {
 .education h6 {
   margin-top: -10px;
 }
-
+/***EXP PRO***/
+.proexp {
+    width: 100%;
+    border: 1px solid;
+}
 
 /*--------------------FOOTER--------------------*/
 /***Footer configuration***/
@@ -201,6 +205,7 @@ footer {
   bottom: 0;
   background-color: rgba(92, 96, 99, 0.8);
 }
+/***The three footer block***/
 #firstblockfooter, #secondblockfooter, #thirdblockfooter {
   width: 33%;
   display: inline-block;
@@ -225,6 +230,7 @@ footer {
   margin-left: -140px;
   margin-top: 6px;
 }
+/***My footer link***/
 footer a {
   weight: bold;
   text-decoration: none;
