@@ -1,3 +1,6 @@
+<?php
+  include_once '../secure/requests_projects.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -27,39 +30,48 @@
     </header>
     <div id="contener">
       <h2>MES PROJETS</h2>
-      <p>Dans cette section, vous retrouvez mes projets les plus récents.</p>
-      <p>Vous pouvez découvrir l'ensemble de mes projets scolaires et personnels sur mon <a href="https://github.com/maximelarrieu" target="_blank">Github</a>.
-      <br>Tous mes projets ont été réalisés sous Fedora 29, Linux.</p>
+      <?php
+        /*SQL request to bdd*/
+        $intro->execute();
+        $descintro = $intro->fetch();
+      ?>
+      <p><?php echo $descintro['Description']?></p>
     </div>
     <div id="main">
       <h2>MES PROJETS RÉCENTS</h2>
       <hr>
       <img src="../ressources/network.jpg" alt="Illustration projets réseau"/>
       <div class="description">
-        <h3><a href="https://github.com/maximelarrieu/b1a_network_projects/" target="_blank">CCNA - Projets réseau</a></h3>
-        <p>
-          Retrouvez mes six projets réseaux récemment effectués. Partant de l'exploration réseau, en passant par de la spéléologie
-          réseau jusqu'à la création d'une réelle topologie réseau avec le logiciel GNS3.
-        </p>
-        <p class="realised">Projets réalisés avec VirtualBox et GNS3</p>
+        <?php
+          /*SQL request to bdd*/
+          $projetone->execute();
+          $projectone = $projetone->fetch(PDO::FETCH_ASSOC);
+        ?>
+        <h3><a href="<?php echo $projectone['LINK'] ?>" target="_blank"><?php echo $projectone['TITLE']?></a></h3>
+        <p><?= $projectone['DESCRIPTION']; ?></p>
+        <p class="realised"><?= $projectone['TECHNO']; ?></p>
       </div>
       <img src="../ressources/converter.png" alt="Illustration converter markdown to html"/>
       <div class="description">
-        <h3><a href="https://github.com/maximelarrieu/b1a_python_projects/tree/master/site_static_project" target="_blank">CONVERTER - Markdown vers HTML</a></h3>
-        <p>
-          Développement d'un script permettant de transormer un dossier de fichiers Markdown en dossier de fichiers HTML.
-          Plusieurs commandes d'interface sont utilisables. Il est possible d'y intégrer ses pages CSS.
-        </p>
-        <p class="realised">Projet réalisé en Python</p>
+        <?php
+          /*SQL request to bdd*/
+          $projetwo->execute();
+          $projectwo = $projetwo->fetch();
+        ?>
+        <h3><a href="<?php echo $projectwo['LINK'] ?>" target="_blank"><?= $projectwo['TITLE']?></a></h3>
+        <p><?= $projectwo['DESCRIPTION']?></p>
+        <p class="realised"><?= $projectwo['TECHNO']; ?></p>
       </div>
       <img src="../ressources/pong.png" alt="Illustration projet pong" />
       <div class="description">
-        <h3><a href="https://github.com/maximelarrieu/b1a_python_projects/tree/master/pong_project" target="_blank">PONG - THE GAME</a></h3>
-        <p>
-          Premier projet de développement. Réprésentation du plus vieux jeu vidéo du monde avec une interface Tkinter.
-          Quelques fonctions permettant de déplacer les personnages et la balle. Très simpliste, jouable à deux.
-        </p>
-        <p class="realised">Projet réalisé en Python</p>
+        <?php
+          /*SQL request to bdd*/
+          $projethree->execute();
+          $projecthree = $projethree->fetch();
+        ?>
+        <h3><a href="<?php echo $projecthree['LINK'] ?>" target="_blank"><?php echo $projecthree['TITLE'];?></a></h3>
+        <p><?= $projecthree['DESCRIPTION']; ?></p>
+        <p class="realised"><?= $projecthree['TECHNO']; ?></p>
       </div>
     </div>
     <footer>
@@ -75,5 +87,4 @@
     </footer>
   <script src="../script.js"></script>
 </body>
-
 </html>

@@ -16,9 +16,26 @@
   margin-bottom: 60px;
   font-size: 29px;
   letter-spacing: 1px;
-  color: rgb(125, 125, 125);
+  color: rgb(17, 17, 17);
   font-weight: bold;
   text-transform: uppercase;
+}
+/***Info mail***/
+#infomail {
+  margin-top: -55px;
+  width: 35%;
+  margin-bottom: 45px;
+}
+/***Errors***/
+#alert {
+  position: absolute;
+  margin-top: 10px;
+  width: 400px;
+  height: 30px;
+  margin-left: 150px;
+  background-color: rgba(255, 0, 0, 0.4);
+  border: 1px solid red;
+  border-radius: 6px;
 }
 /***Contact form***/
 form {
@@ -26,13 +43,13 @@ form {
   margin-left: auto;
   margin-right: auto;
   margin-top: -25px;
-  width: 540px;
+  width: 100%;
   transition: all 4s ease-in-out;
 }
 input[type=text], input[type=email] {
   font-family: 'Montserrat', sans-serif;
   color: white;
-  width: 100%;
+  width: 92%;
   padding: 15px;
   margin-bottom: 9px;
   border: none;
@@ -42,7 +59,7 @@ input[type=text], input[type=email] {
 textarea {
   font-family: 'Montserrat', sans-serif;
   color: white;
-  width: 100%;
+  width: 95%;
   height: 150px;
   background-color: transparent;
   border: none;
@@ -52,8 +69,8 @@ textarea {
 input[type=submit] {
   font-family: 'Montserrat', sans-serif;
   position: relative;
-  margin-left: 214px;
-  margin-top: 15px;
+  margin-left: 40.5%;
+  margin-top: 30px;
 }
 input::placeholder, textarea::placeholder {
   font-size: 18px;

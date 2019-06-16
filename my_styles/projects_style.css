@@ -2,7 +2,7 @@
 /***Contener's base***/
 #contener {
   width: 955px;
-  height: 160px;
+  height: 170px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -17,7 +17,7 @@
   margin-top: 5px;
   font-size: 29px;
   letter-spacing: 1px;
-  color: rgb(125, 125, 125);
+  color: rgb(17, 17, 17);
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -45,7 +45,7 @@
   background-color: rgba(75, 75, 75, 0.38);
   border: 2px solid grey;
 }
-#contener h2, {
+#contener h2 {
   font-size: 29px;
   font-weight: bold;
 }
@@ -70,7 +70,7 @@
   margin-top: 15px;
   position: relative;
   width: 17%;
-  height: 26%;
+  height: 24%;
   border-radius: 8px;
 }
 #main img, .description {

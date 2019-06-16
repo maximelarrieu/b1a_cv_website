@@ -1,27 +1,32 @@
 <?php
-  /***HISTORY MSG***/
-  $monfichier = fopen('../historymsg.txt', 'ar+');
-  $date = date('d/m/Y h:i:s');
-  $contactname = $_POST['nom'];
-  $contactmail = $_POST['email'];
-  $spaces = "\r\n";
-  $separators = "===============================";
+$errors = [];
 
-  fwrite($monfichier, $date);
-  fwrite($monfichier, $spaces);
-  fwrite($monfichier, $contactname);
-  fwrite($monfichier, $spaces);
-  fwrite($monfichier, $contactmail);
-  fwrite($monfichier, $spaces);
-  fwrite($monfichier, $separators);
-  fwrite($monfichier, $spaces);
+if(!array_key_exists('email', $_POST) || $_POST['email'] == '' || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+  $errors['email'] = "Vous n'avez pas renseigné un email valide";
+}
+if(!array_key_exists('message', $_POST) || $_POST['message'] == '') {
+  $errors['message'] = "Vous n'avez pas renseigné votre message";
+}
+session_start();
+if(!empty($errors)) {
+  $_SESSION['errors'] = $errors;
+  $_SESSION['inputs'] = $_POST;
+  header('Location: contact.php');
+} else {
+  $_SESSION['errors'] = $errors;
+  $received = "Vous avez reçu un message de ". $_POST['nom'] ." depuis votre formulaire de contact :\n
+      Adresse d'envoi : " . $_POST['email'] . "\n
+      " . $_POST['message'];
+  $headers="MIME-Version: 1.0\r\n";
+  $headers='FROM: ' . $_POST['email'];
+  $headers='Content-Type:text/html; charset=utf-8;';
+  $headers='Content-Transfer-Encoding: 8bit';
+  mail('contact@maximelarrieu.website', 'Message de ' . htmlspecialchars($_POST['nom']) .' via formulaire contact' , $received, $headers);
+}
 
-  fclose($monfichier);
   /***DATABASE CONTACT FORM***/
   try {
-    include('../secure/config.php');
-    $connexion = new PDO("mysql:host=$server;dbname=id8918687_cv_database", $login, $password);
-    $connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    include_once '../secure/config.php';
     echo 'Connexion à la base de données réussie.';
 
     $request = $connexion->prepare (
@@ -37,7 +42,6 @@
     $request->bindParam(':message',$message);
     $request->execute();
   }
-
   catch(PDOException $except) {
     echo 'Echec de la connexion : ' .$except->getMessage();
   }
@@ -70,10 +74,11 @@
       </nav>
     </header>
     <div id="contener">
-      <h2>A BIENTOT !</h>
-      <h4>Merci pour votre message<?php echo strip_tags($_POST['nom']); ?> !</h4>
+      <h2>VOTRE MESSAGE A BIEN ÉTÉ ENVOYÉ</h>
+      <h4>Merci pour votre message <?php echo htmlspecialchars($_POST['nom']); ?> !</h4>
       <div id="socialLinks">
-        <p>Retrouvez-moi également sur </p>
+        <p>Ce site web a été réalisé dans le cadre de mes études supérieures.
+        Merci de l'avoir visité.</p>
       </div>
     </div>
     <footer>

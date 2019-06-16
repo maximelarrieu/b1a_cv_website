@@ -1,3 +1,6 @@
+<?php
+  include_once 'secure/requests_index.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,7 +11,6 @@
   <link rel="stylesheet" href="my_styles/header.css">
   <link rel="stylesheet" href="my_styles/footer.css">
   <link rel="stylesheet" href="my_styles/index_style.css">
-  <link rel="stylesheet" href="my_style/index_phone.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <meta name="viewport" content="initial-scale=1.0" />
 </head>
@@ -29,22 +31,31 @@
     <div id="contenerr">
       <img class="pdp" src="ressources/img.jpg" alt="Photo de profil" />
       <h2>Bienvenue sur mon site web CV</h2>
-      <p>Maxime Larrieu, 20 ans. <br>Etudiant en première année. <br>Résident Bordeaux.</p>
-      <p>Passionné de développement Web et de matériels informatiques.</p>
+      <?php
+        /*SQL request to bdd*/
+        $desc->execute();
+        $datadesc = $desc->fetch();
+      ?>
+      <?php echo $datadesc['description']; ?>
       <div class="bottomTitle">
-        <p>HTML/CSS, Media queries, Javascript, PHP</p>
+        <?php
+        /*SQL request to bdd*/
+        $sub->execute();
+        $subtitle = $sub->fetch();
+        ?>
+        <p><?php echo $subtitle['sous-titre']?></p>
       </div>
       <div id="bottom">
         <div class="left">
-          <img class="lenovo" src="ressources/lenovo.png"></img>
+          <img class="lenovo" src="ressources/lenovo.png" alt="lenovo">
           <h3>Lenovo ThinkPad470s</h3>
         </div>
         <div class="mid">
-          <img class="fedora" src="ressources/fedora.png"></img>
+          <img class="fedora" src="ressources/fedora.png" alt="fedora">
           <h3>Fedora 29</h3>
         </div>
         <div class="right">
-          <img class="atom" src="ressources/atom.png"></img>
+          <img class="atom" src="ressources/atom.png" alt="atom">
           <h3>Atom</h3>
         </div>
       </div>
@@ -54,10 +65,10 @@
         Ynov @ <span id="current-year"></span>
       </div>
       <div id="secondblockfooter">
-        N'hésitez pas à <a class="contactme" href="contact.php">me contacter</a> !
+        <img src="ressources/github.png" alt="github">
       </div>
       <div id="thirdblockfooter">
-        <p>Retrouvez-moi également sur <a href="https://www.linkedin.com/in/maxime-larrieu-b563a5159/">Linkedin</a></p>
+        <p>Retrouvez-moi également sur <a href="https://www.linkedin.com/in/maxime-larrieu-b563a5159/" target="_blank">Linkedin</a></p>
       </div>
     </footer>
   <script src="script.js"></script>

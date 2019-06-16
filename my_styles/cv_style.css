@@ -22,7 +22,7 @@
   margin-left: 28px;
   font-size: 29px;
   letter-spacing: 1px;
-  color: rgb(125, 125, 125);
+  color: rgb(17, 17, 17);
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -127,30 +127,6 @@ button a {
   color: rgb(15, 32, 65);
   font-size: 13px;
 }
-<<<<<<< HEAD
-/***EXP PRO***/
-.proexp {
-    width: 100%;
-    border: 1px solid;
-}
-
-/*--------------------FOOTER--------------------*/
-/***Footer configuration***/
-footer {
-  font-family: 'Montserrat', sans-serif;
-  margin-top: 20px;
-  width: 1920px;
-  font-size: 12px;
-  height: 60px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  background-color: rgba(92, 96, 99, 0.8);
-}
-/***The three footer block***/
-#firstblockfooter, #secondblockfooter, #thirdblockfooter {
-  width: 33%;
-=======
 
 /***EXP PRO***/
 .pro {
@@ -158,7 +134,6 @@ footer {
   text-align: left;
   text-align: center;
   float: left;
->>>>>>> 24d8164d504d6ad3580a6f07039b98dbf041d4c8
   display: inline-block;
   width: 49%;
   margin-bottom: 30px;
@@ -206,15 +181,7 @@ footer {
   z-index: 10000;
   border-top-left-radius: 5px;
 }
-<<<<<<< HEAD
-/***My footer link***/
-footer a {
-  weight: bold;
-  text-decoration: none;
-  color: #fff;
-=======
 .value_progressing {
->>>>>>> 24d8164d504d6ad3580a6f07039b98dbf041d4c8
   position: relative;
   float: right;
   padding-right: 10px;

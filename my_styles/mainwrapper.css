@@ -2,10 +2,11 @@
 /***Generals parameters, my page's base***/
 body {
   font-family: 'Montserrat', sans-serif;
+  font-display: auto;
   width: 100%;
   margin: 0;
   padding: 0;
-  background-image: url("../ressources/prism.png");
+  background-color: rgba(36, 35, 35, 0.9);
   color: white;
   background-repeat: cover;
 }

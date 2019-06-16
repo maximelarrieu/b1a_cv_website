@@ -1,0 +1,28 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(36, 35, 35, 0.81);
+  color: white;
+  background-repeat: cover;
+}
+h3 {
+  text-align: center;
+}
+form {
+  width: 100%;
+}
+.packmodif {
+  width: 47%;
+  height: 460px;
+  float: left;
+  margin: 20px;
+  margin-bottom: 60px;
+}
+.new {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  float: left;
+}

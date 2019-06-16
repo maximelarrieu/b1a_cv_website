@@ -14,7 +14,6 @@
 }
 /***Image parameters***/
 .pdp {
-  border: 1px solid;
   height: 300px;
   margin-left: 20px;
 }
@@ -32,7 +31,7 @@
   font-size: 24px;
   text-transform: uppercase;
   font-weight: bold;
-  color: rgb(125, 125, 125);
+  color: rgb(17, 17, 17);
 }
 /***Paragraph parameters***/
 .pdp, #contenerr p {

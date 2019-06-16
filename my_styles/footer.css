@@ -14,12 +14,18 @@ footer {
   width: 33%;
   display: inline-block;
   font-size: 14px;
+  vertical-align: center;
 }
 #firstblockfooter {
+  margin-left: 4px;
   text-align: left;
 }
 #secondblockfooter {
   text-align: center;
+}
+#secondblockfooter img{
+  height: 24px;
+  width: 24px;
 }
 #thirdblockfooter {
   text-align: right;

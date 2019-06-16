@@ -1,25 +1,5 @@
 <?php
-  if(isset($_POST['mailform'])) {
-    if(!empty($_POST['nom']) AND !empty($_POST['email']) AND !empty($_POST['message'])) {
-      $header="MIME-Version: 1.0\r\n";
-      $header="From:'maximelarrieu.website'<contact@maximelarrieu.website";
-      $header="Content-Type:text/html; charset='utf-8'";
-      $header="Content-Transfer-Encoding: 8bit";
-
-      $message="
-      <html>
-        <body>
-          <b>Nom de l'expediteur : ".$_POST['nom']."</b>
-          <b>Mail de l'expediteur : ".$_POST['email']."</b>
-          <b>Message de l'expediteur : ".nl2br($_POST['message'])."</b>
-        </body>
-      </html>";
-      mail("maxime.larrieu@ynov.com", "CONTACT - maximelarrieu.website", $message, $header);
-    }
-    else {
-      $msg="Tous les champs doivent être complétées.";
-    }
-  }
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -48,18 +28,19 @@
         </ul>
       </nav>
     </header>
+    <?php if(array_key_exists('errors', $_SESSION)): ?>
+        <?= implode('<br>', $_SESSION['errors']); ?>
+    <?php unset($_SESSION['errors']); endif; ?>
     <div id="contener">
       <h2>ME CONTACTER</h2>
+      <div id="infomail">
+        <h6>Contact : contact@maximelarrieu.website</h6>
+      </div>
       <form method="POST" action="form.php">
-        <input type="text" name="nom" id="nom" placeholder="Votre nom..."/>
-        <input type="text" name="email" id="email" placeholder="Votre email..."/>
-        <textarea name="message" id="message" placeholder="Votre message..."></textarea>
+        <input required type="text" name="nom" id="nom" placeholder="Votre nom..." value="<?= isset($_SESSION['inputs']['nom']) ? $_SESSION['inputs']['nom']: ''; ?>"/>
+        <input required type="email" name="email" id="email" placeholder="Votre email..." value="<?= isset($_SESSION['inputs']['email']) ? $_SESSION['inputs']['email']: ''; ?>"/>
+        <textarea required name="message" id="message" placeholder="Votre message..."><?= isset($_SESSION['inputs']['message']) ? $_SESSION['inputs']['message']: ''; ?></textarea>
         <input type="submit" value="Envoyer" name="mailform" />
-        <?php
-          if(isset($msg)) {
-            echo $msg;
-          }
-        ?>
       </form>
     </div>
     <footer>
@@ -77,3 +58,7 @@
 </body>
 
 </html>
+<?php
+  unset($_SESSION['inputs']);
+  unset($_SESSION['errors']);
+?>

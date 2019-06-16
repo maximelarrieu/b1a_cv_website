@@ -6,7 +6,7 @@
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  top: 150px;
+  top: 73px;
   border-radius: 6px;
   letter-spacing: 2px;
   background-color: rgba(75, 75, 75, 0.38);
@@ -17,8 +17,9 @@
   margin-bottom: 60px;
   font-size: 29px;
   letter-spacing: 1px;
-  color: rgb(125, 125, 125);
+  color: rgb(17, 17, 17);
   font-weight: bold;
+  text-transform: uppercase:
 }
 #contener h4 {
   margin-left: 23px;
@@ -31,4 +32,5 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  border: 1px solid;
 }
