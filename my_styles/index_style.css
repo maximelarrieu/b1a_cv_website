@@ -54,6 +54,8 @@
 .bottomTitle p {
   color: rgb(15, 32, 65);
   font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: bold;
 }
 /***Contener's bottom***/
 #bottom {
