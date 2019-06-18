@@ -44,6 +44,7 @@
       <div class="description">
         <?php
           /*SQL request to bdd*/
+          $projetone = $connexion->prepare('SELECT * FROM projects WHERE id=1;');
           $projetone->execute();
           $projectone = $projetone->fetch(PDO::FETCH_ASSOC);
         ?>
@@ -79,10 +80,11 @@
         <p>Ynov @ <span id="current-year"></span></p>
       </div>
       <div id="secondblockfooter">
-        N'hésitez pas à <a class="contactme" href="contact.php">me contacter</a> !
+        <a href="https://github.com/maximelarrieu"><img src="../ressources/github.png" alt="github"><a/>
+        <a href="https://www.linkedin.com/in/maxime-larrieu-b563a5159/"><img src="../ressources/linkedin.png" alt="linkedin"></a>
       </div>
       <div id="thirdblockfooter">
-        <p>Retrouvez-moi également sur <a href="https://www.linkedin.com/in/maxime-larrieu-b563a5159/">Linkedin</a></p>
+        <p> <a href="login.php">Administration</a></p>
       </div>
     </footer>
   <script src="../script.js"></script>

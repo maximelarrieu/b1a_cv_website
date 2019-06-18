@@ -94,9 +94,10 @@ nav a:hover, footer a:hover, #contener a:hover, #main a:hover, #lkRedirect a:hov
 nav a:hover:after, footer a:hover:after, #contener a:hover:after, #main a:hover:after, #lkRedirect a:hover:after {
 	width: 100%;
 }
-/***PHONE COMPTABILITIES***/
+/***PHONE COMPTABILITIES
 @media only screen (max-width: 767px) and (orientation: portrait) {
   header {
     width: 767px;
   }
 }
+***/

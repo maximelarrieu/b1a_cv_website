@@ -3,7 +3,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: rgba(36, 35, 35, 0.81);
+  background-image: radial-gradient(circle at center, rgb(56, 56, 56), rgb(148, 148, 148));
   color: white;
   background-repeat: cover;
 }
@@ -14,11 +14,22 @@ form {
   width: 100%;
 }
 .packmodif {
-  width: 47%;
-  height: 460px;
+  width: 47.6%;
+  height: 555px;
   float: left;
-  margin: 20px;
+  margin: 15px;
   margin-bottom: 60px;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+#index {
+  height: 380px;
+}
+#project {
+  height: 450px;
+}
+#admin {
+  height: 100px;
 }
 .new {
   width: 50%;

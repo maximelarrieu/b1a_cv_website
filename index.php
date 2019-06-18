@@ -65,10 +65,11 @@
         Ynov @ <span id="current-year"></span>
       </div>
       <div id="secondblockfooter">
-        <img src="ressources/github.png" alt="github">
+        <a href="https://github.com/maximelarrieu"><img src="ressources/github.png" alt="github"><a/>
+        <a href="https://www.linkedin.com/in/maxime-larrieu-b563a5159/"><img src="ressources/linkedin.png" alt="linkedin"></a>
       </div>
       <div id="thirdblockfooter">
-        <p>Retrouvez-moi également sur <a href="https://www.linkedin.com/in/maxime-larrieu-b563a5159/" target="_blank">Linkedin</a></p>
+        <p> <a href="my_pages/login.php">Administration</a></p>
       </div>
     </footer>
   <script src="script.js"></script>

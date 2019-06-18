@@ -6,7 +6,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: rgba(36, 35, 35, 0.9);
+  background-image: radial-gradient(circle at center, rgb(56, 56, 56), rgb(148, 148, 148));
   color: white;
   background-repeat: cover;
 }

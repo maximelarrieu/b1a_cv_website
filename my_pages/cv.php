@@ -13,7 +13,8 @@
   <link rel="stylesheet" href="../my_styles/footer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.8.10/themes/smoothness/jquery-ui.css" type="text/css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
 </head>
 
@@ -185,10 +186,11 @@
         Ynov @ <span id="current-year"></span>
       </div>
       <div id="secondblockfooter">
-        N'hésitez pas à <a class="contactme" href="contact.php">me contacter</a> !
+        <a href="https://github.com/maximelarrieu"><img src="../ressources/github.png" alt="github"><a/>
+        <a href="https://www.linkedin.com/in/maxime-larrieu-b563a5159/"><img src="../ressources/linkedin.png" alt="linkedin"></a>
       </div>
       <div id="thirdblockfooter">
-        <p>Retrouvez-moi également sur <a href="https://www.linkedin.com/in/maxime-larrieu-b563a5159/">Linkedin</a></p>
+        <p> <a href="login.php">Administration</a></p>
       </div>
     </footer>
   <script type="text/javascript" src="../script.js"></script>
