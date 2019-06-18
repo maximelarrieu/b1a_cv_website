@@ -27,4 +27,4 @@ Certaines tables me permettent d'enregistrer des valeurs tels que des textes pou
 ### Administration
 Une page de login (si les identifiants sont les bons) admet une redirection vers la page administration de mon site web. Depuis cette dernière, je peux par exemple, modifier ma description de la page index grâce à un éditeur de texte WYSIWYG, pour ma part TinyMCE.  
 
-Il est possible d'y ajouter des expériences professionnelles, des projets et même un membre administrateur. 
+Il est possible d'y ajouter, modifier, supprimer des expériences professionnelles, des projets et même un membre administrateur. 
