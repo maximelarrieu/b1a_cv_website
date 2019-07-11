@@ -10,11 +10,13 @@ body {
   margin-left: auto;
   margin-right: auto;
   border: 2px solid grey;
-  border-radius: 6px;
+  border-radius: 2px;
   letter-spacing: 2px;
   text-align: center;
   padding: 40px;
   background-color: rgba(75, 75, 75, 0.38);
+  border: 2px solid rgb(25, 56, 120);
+  box-shadow: 15px 12px 12px 1px rgba(0, 0, 0, 0.7);
 }
 label {
   font-size: 30px;

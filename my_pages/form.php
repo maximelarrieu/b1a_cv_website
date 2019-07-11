@@ -1,19 +1,6 @@
 <?php
-$errors = [];
 
-if(!array_key_exists('email', $_POST) || $_POST['email'] == '' || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-  $errors['email'] = "Vous n'avez pas renseigné un email valide";
-}
-if(!array_key_exists('message', $_POST) || $_POST['message'] == '') {
-  $errors['message'] = "Vous n'avez pas renseigné votre message";
-}
-session_start();
-if(!empty($errors)) {
-  $_SESSION['errors'] = $errors;
-  $_SESSION['inputs'] = $_POST;
-  header('Location: contact.php');
-} else {
-  $_SESSION['errors'] = $errors;
+if (isset($_POST['mailform'])) {
   $received = "Vous avez reçu un message de ". $_POST['nom'] ." depuis votre formulaire de contact :\n
       Adresse d'envoi : " . $_POST['email'] . "\n
       " . $_POST['message'];
@@ -21,7 +8,7 @@ if(!empty($errors)) {
   $headers='FROM: ' . $_POST['email'];
   $headers='Content-Type:text/html; charset=utf-8;';
   $headers='Content-Transfer-Encoding: 8bit';
-  mail('contact@maximelarrieu.website', 'Message de ' . htmlspecialchars($_POST['nom']) .' via formulaire contact' , $received, $headers);
+  mail('contact@maximelarrieu.website', 'Message de ' . htmlspecialchars($_POST['nom']) .' via formulaire contact' , htmlspecialchars($received), $headers);
 }
 
   /***DATABASE CONTACT FORM***/
@@ -41,7 +28,6 @@ if(!empty($errors)) {
     $request->bindParam(':email',$email);
     $request->bindParam(':message',$message);
     $request->execute();
-    header("Location: form.php");
   }
   catch(PDOException $except) {
     echo 'Echec de la connexion : ' .$except->getMessage();
@@ -62,18 +48,7 @@ if(!empty($errors)) {
 </head>
 
 <body>
-    <header>
-      <h1>Maxime Larrieu</h1>
-      <h4><?php echo date('d/m/Y'); ?></h4>
-      <nav>
-        <ul>
-          <li><a href="../index.php">ACCUEIL</a></li>
-          <li><a href="cv.php">CV</a></li>
-          <li><a href="projects.php">PROJETS</a></li>
-          <li><a href="contact.php">CONTACT</a></li>
-        </ul>
-      </nav>
-    </header>
+    <?php include_once 'header.php'?>
     <div id="contener">
       <h2>VOTRE MESSAGE A BIEN ÉTÉ ENVOYÉ</h>
       <h4>Merci pour votre message <?php echo htmlspecialchars($_POST['nom']); ?> !</h4>
@@ -82,18 +57,7 @@ if(!empty($errors)) {
         Merci de l'avoir visité.</p>
       </div>
     </div>
-    <footer>
-      <div id="firstblockfooter">
-        Ynov @ <span id="current-year"></span>
-      </div>
-      <div id="secondblockfooter">
-        <a href="https://github.com/maximelarrieu"><img src="../ressources/github.png" alt="github"><a/>
-        <a href="https://www.linkedin.com/in/maxime-larrieu-b563a5159/"><img src="../ressources/linkedin.png" alt="linkedin"></a>
-      </div>
-      <div id="thirdblockfooter">
-        <p> <a href="login.php">Administration</a></p>
-      </div>
-    </footer>
+    <?php include_once 'footer.php'?>
   <script src="../script.js"></script>
 </body>
 

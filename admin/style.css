@@ -1,35 +1,51 @@
+#all {
+  margin-top: 130px;
+  color: black;
+}
+h1 {
+  margin-left: 22px;
+}
 body {
   font-family: 'Montserrat', sans-serif;
   width: 100%;
   margin: 0;
   padding: 0;
-  background-image: radial-gradient(circle at center, rgb(56, 56, 56), rgb(148, 148, 148));
-  color: white;
-  background-repeat: cover;
 }
 h3 {
   text-align: center;
+  text-transform: uppercase;
 }
 form {
   width: 100%;
 }
 .packmodif {
   width: 47.6%;
-  height: 555px;
+  height: 460px;
   float: left;
   margin: 15px;
-  margin-bottom: 60px;
-  border: 3px solid black;
-  border-radius: 5px;
+  margin-bottom: 40px;
+  border: 2px solid rgb(25, 56, 120);
+  background-color: rgba(75, 75, 75, 0.38);
+  box-shadow: 15px 12px 12px 1px rgba(0, 0, 0, 0.7);
+  border-radius: 2px;
 }
+/*****INDEX PACK****/
 #index {
-  height: 380px;
+  height: 460px;
 }
+#indexintro {
+  height: 270px;
+}
+#subtitle {
+  width: 75%;
+}
+/*****PROJECT PACK*****/
 #project {
-  height: 450px;
+  height: 460px;
 }
 #admin {
   height: 100px;
+  margin-bottom: 60px;
 }
 .new {
   width: 50%;

@@ -8,8 +8,9 @@
   position: relative;
   top: 150px;
   background-color: rgba(75, 75, 75, 0.38);
-  border: 2px solid grey;
-  border-radius: 6px;
+  border: 2px solid rgb(25, 56, 120);
+  box-shadow: 15px 12px 8px 1px rgba(0, 0, 0, 0.7);
+  border-radius: 2px;
 }
 #contener h2, #contener img, button {
   float: left;
@@ -40,7 +41,7 @@
   margin-top: 120px;
 }
 #lkRedirect {
-  color: rgb(125, 125, 125);
+  color: rgb(64, 64, 64);
   position: absolute;
   width: 170px;
   margin-left: 783px;
@@ -51,7 +52,7 @@
   position: relative;
   font-weight: bold;
   text-decoration: none;
-  color: rgb(125, 125, 125);
+  color: rgb(64, 64, 64);
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
@@ -61,6 +62,7 @@
   margin-top: -10px;
   margin-bottom: 10px;
 }
+
 /***Button download config***/
 button {
   font-family: 'Montserrat', sans-serif;
@@ -82,20 +84,22 @@ button a {
   text-decoration: none;
   color: white;
 }
+
 /*--------------------MAIN--------------------*/
 /***Main contenu***/
 #main {
   position: relative;
   width: 960px;
-  height: 1200px;
+  min-height: 1330px;
   top: 180px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 70px;
   padding-left: 10px;
-  border-radius: 6px;
+  border-radius: 3px;
   background-color: rgba(75, 75, 75, 0.38);
-  border: 2px solid grey;
+  border: 2px solid rgb(25, 56, 120);
+  box-shadow: 15px 12px 8px 1px rgba(0, 0, 0, 0.7);
 }
 #main h3 {
   letter-spacing: 2px;
@@ -116,7 +120,7 @@ button a {
   text-transform: uppercase;
   font-size: 18px;
   margin-top: 4px;
-  color: rgb(158, 158, 158);
+  color: rgb(64, 64, 64);
 }
 .education h5 {
   margin-top: -15px;
@@ -130,17 +134,17 @@ button a {
 
 /***EXP PRO***/
 .pro {
+  position: relative;
   margin-top: 30px;
   text-align: left;
   text-align: center;
-  float: left;
   display: inline-block;
   width: 49%;
   margin-bottom: 30px;
 }
 .pro h4 {
   text-transform: uppercase;
-  color: rgb(158, 158, 158);
+  color: rgb(64, 64, 64);
   margin: 0;
 }
 .pro h5 {
@@ -152,7 +156,10 @@ button a {
   margin-bottom: -15px;
   font-size: 13px;
 }
-
+#context {
+  color: black;
+  font-size: 13px;
+}
 .date {
   text-align: center;
 }
@@ -196,39 +203,17 @@ button a {
   border-radius: 5px;
   box-shadow: 2px 0 2px #555;
 }
-.htmlColor {
+.skillColor {
   background: rgba(38, 32, 96, 0.72);
 }
-.html {
-  background: rgba(94, 94, 94, 0.5);
-}
-.cssColor {
-  background: rgba(38, 32, 96, 0.72);
-}
-.css {
-  background: rgba(94, 94, 94, 0.5);
-}
-.jsColor {
-  background: rgba(38, 32, 96, 0.72);
-}
-.js {
-  background: rgba(94, 94, 94, 0.5);
-}
-.cColor {
-  background: rgba(38, 32, 96, 0.72);
-}
-.c {
-  background: rgba(94, 94, 94, 0.5);
-}
-.linuxColor {
-  background: rgba(38, 32, 96, 0.72);
-}
-.linux {
+.skill {
   background: rgba(94, 94, 94, 0.5);
 }
 /***HOBBIES***/
 #hobbies {
+  margin-top: 30px;
   height: 100px;
+  margin-bottom: 20px;
 }
 #hobbies img {
   display: inline-block;

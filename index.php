@@ -8,26 +8,27 @@
   <meta charset="utf-8">
   <title>Accueil - Maxime Larrieu</title>
   <link rel="stylesheet" href="my_styles/mainwrapper.css">
-  <link rel="stylesheet" href="my_styles/header.css">
-  <link rel="stylesheet" href="my_styles/footer.css">
   <link rel="stylesheet" href="my_styles/index_style.css">
+  <link rel="stylesheet" href="my_styles/header.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <meta name="viewport" content="initial-scale=1.0" />
 </head>
 
 <body>
-    <header>
-      <h1>Maxime Larrieu</h1>
-      <h4><?php echo date('d/m/Y'); ?></h4>
-      <nav>
-        <ul>
-          <li><a href="index.php">ACCUEIL</a></li>
-          <li><a href="my_pages/cv.php">CV</a></li>
-          <li><a href="my_pages/projects.php">PROJETS</a></li>
-          <li><a href="my_pages/contact.php">CONTACT</a></li>
-        </ul>
-      </nav>
-    </header>
+  <header>
+    <h1>Maxime Larrieu</h1>
+    <h4><?php echo date('d/m/Y'); ?></h4>
+    <nav>
+      <ul>
+        <li><a href="index.php">ACCUEIL</a></li>
+        <li><a href="my_pages/cv.php">CV</a></li>
+        <li><a href="my_pages/projects.php">PROJETS</a></li>
+        <li><a href="blog/index.php">BLOG</a></li>
+        <li><a href="my_pages/contact.php">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
     <div id="contenerr">
       <img class="pdp" src="ressources/img.jpg" alt="Photo de profil" />
       <h2>Bienvenue sur mon site web CV</h2>
@@ -60,18 +61,7 @@
         </div>
       </div>
     </div>
-    <footer>
-      <div id="firstblockfooter">
-        Ynov @ <span id="current-year"></span>
-      </div>
-      <div id="secondblockfooter">
-        <a href="https://github.com/maximelarrieu"><img src="ressources/github.png" alt="github"><a/>
-        <a href="https://www.linkedin.com/in/maxime-larrieu-b563a5159/"><img src="ressources/linkedin.png" alt="linkedin"></a>
-      </div>
-      <div id="thirdblockfooter">
-        <p> <a href="my_pages/login.php">Administration</a></p>
-      </div>
-    </footer>
+    <?php include_once 'my_pages/footer.php'?>
   <script src="script.js"></script>
 </body>
 

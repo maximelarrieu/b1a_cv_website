@@ -2,7 +2,9 @@
 try {
   $server = "localhost";
   $db = "id8918687_cv_database";
-  $login = "id8918687_my_cv";
+  /*$login = "id8918687_my_cv";
+  $password = "mydatabasecv";*/
+  $login = "root";
   $password = "";
   $charset = 'UTF8';
   $options = [

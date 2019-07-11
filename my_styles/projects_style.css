@@ -9,9 +9,10 @@
   top: 150px;
   padding-top: 7px;
   padding-left: 15px;
-  border-radius: 6px;
+  border-radius: 2px;
   background-color: rgba(75, 75, 75, 0.38);
-  border: 2px solid grey;
+  border: 2px solid rgb(25, 56, 120);
+  box-shadow: 15px 12px 12px 1px rgba(0, 0, 0, 0.7);
 }
 #contener h2 {
   margin-top: 5px;
@@ -34,16 +35,17 @@
 #main {
   position: relative;
   width: 955px;
-  height: 700px;
+  height: 680px;
   top: 150px;
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 70px;
   padding-left: 10px;
-  border-radius: 6px;
+  border-radius: 2px;
   background-color: rgba(75, 75, 75, 0.38);
-  border: 2px solid grey;
+  border: 2px solid rgb(25, 56, 120);
+  box-shadow: 15px 12px 12px 1px rgba(0, 0, 0, 0.7);
 }
 #contener h2 {
   font-size: 29px;
@@ -53,7 +55,7 @@
   font-weight: bold;
 }
 #main a {
-  color: rgb(125, 125, 125);
+  color: rgb(64, 64, 64);
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
@@ -66,14 +68,14 @@
   font-weight: bold;
 }
 /***Icons images projects***/
-#main img {
+.projet img {
   margin-top: 15px;
   position: relative;
   width: 17%;
-  height: 24%;
-  border-radius: 8px;
+  height: 160px;
+  border-radius: 6px;
 }
-#main img, .description {
+.projet img, .description {
   position: relative;
   display: inline-block;
   vertical-align: top;

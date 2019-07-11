@@ -6,11 +6,12 @@
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  top: 73px;
-  border-radius: 6px;
+  top: 150px;
+  border-radius: 2px;
   letter-spacing: 2px;
   background-color: rgba(75, 75, 75, 0.38);
-  border: 2px solid grey;
+  border: 2px solid rgb(25, 56, 120);
+  box-shadow: 15px 12px 12px 1px rgba(0, 0, 0, 0.7);
 }
 #contener h2 {
   margin-left: 23px;

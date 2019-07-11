@@ -16,18 +16,7 @@
 </head>
 
 <body>
-    <header>
-      <h1>Maxime Larrieu</h1>
-      <h4><?php echo date('d/m/Y'); ?></h4>
-      <nav>
-        <ul>
-          <li><a href="../index.php">ACCUEIL</a></li>
-          <li><a href="cv.php">CV</a></li>
-          <li><a href="projects.php">PROJETS</a></li>
-          <li><a href="contact.php">CONTACT</a></li>
-        </ul>
-      </nav>
-    </header>
+  <?php include_once 'header.php'?>
     <div id="contener">
       <h2>MES PROJETS</h2>
       <?php
@@ -40,53 +29,23 @@
     <div id="main">
       <h2>MES PROJETS RÉCENTS</h2>
       <hr>
-      <img src="../ressources/network.jpg" alt="Illustration projets réseau"/>
-      <div class="description">
+      <div class="projet">
         <?php
           /*SQL request to bdd*/
-          $projetone = $connexion->prepare('SELECT * FROM projects WHERE id=1;');
-          $projetone->execute();
-          $projectone = $projetone->fetch(PDO::FETCH_ASSOC);
+          $projet->execute();
+          $project = $projet->fetchAll(PDO::FETCH_ASSOC);
+          foreach ($project as $projects) {
+            echo
+            "<img src=".$projects['IMAGE']." alt='Illustration projets réseau'/>
+            <div class='description'>
+            <h3><a href=". $projects['LINK']." target='_blank'>".$projects['TITLE']."</a></h3>
+            <p>".$projects['DESCRIPTION']."</p>
+            <p class='realised'>Projet réalisé avec ".$projects['TECHNO']."</p>
+            </div>";
+          }
         ?>
-        <h3><a href="<?php echo $projectone['LINK'] ?>" target="_blank"><?php echo $projectone['TITLE']?></a></h3>
-        <p><?= $projectone['DESCRIPTION']; ?></p>
-        <p class="realised"><?= $projectone['TECHNO']; ?></p>
-      </div>
-      <img src="../ressources/converter.png" alt="Illustration converter markdown to html"/>
-      <div class="description">
-        <?php
-          /*SQL request to bdd*/
-          $projetwo->execute();
-          $projectwo = $projetwo->fetch();
-        ?>
-        <h3><a href="<?php echo $projectwo['LINK'] ?>" target="_blank"><?= $projectwo['TITLE']?></a></h3>
-        <p><?= $projectwo['DESCRIPTION']?></p>
-        <p class="realised"><?= $projectwo['TECHNO']; ?></p>
-      </div>
-      <img src="../ressources/pong.png" alt="Illustration projet pong" />
-      <div class="description">
-        <?php
-          /*SQL request to bdd*/
-          $projethree->execute();
-          $projecthree = $projethree->fetch();
-        ?>
-        <h3><a href="<?php echo $projecthree['LINK'] ?>" target="_blank"><?php echo $projecthree['TITLE'];?></a></h3>
-        <p><?= $projecthree['DESCRIPTION']; ?></p>
-        <p class="realised"><?= $projecthree['TECHNO']; ?></p>
-      </div>
     </div>
-    <footer>
-      <div id="firstblockfooter">
-        <p>Ynov @ <span id="current-year"></span></p>
-      </div>
-      <div id="secondblockfooter">
-        <a href="https://github.com/maximelarrieu"><img src="../ressources/github.png" alt="github"><a/>
-        <a href="https://www.linkedin.com/in/maxime-larrieu-b563a5159/"><img src="../ressources/linkedin.png" alt="linkedin"></a>
-      </div>
-      <div id="thirdblockfooter">
-        <p> <a href="login.php">Administration</a></p>
-      </div>
-    </footer>
+    <?php include_once 'footer.php'?>
   <script src="../script.js"></script>
 </body>
 </html>
