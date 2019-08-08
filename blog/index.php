@@ -54,7 +54,7 @@
               <h4>".$articles['PLACE']."</h4>
               <h5>".$articles['DATESTOTALES']."</h5>
               <p class='description'>".$articles['DESCRIPTION']."</p>
-              <h6><a href='".$articles['LINK']."'>En savoir plus...</a></h6>
+              <h6><a href='".$articles['LINK']."'>Accèder aux articles...</a></h6>
             </div>
             ";}
         ?>

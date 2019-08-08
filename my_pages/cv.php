@@ -21,7 +21,7 @@
 <body>
   <?php include_once 'header.php'?>
     <div id="contener">
-      <img src="../ressources/img.jpg" height="215px" />
+      <img src="../ressources/img.jpg" height="215px" id='pdp'/>
       <h2>Curriculum Vitae</h2>
       <button><a href="../ressources/Maxime Larrieu - CV.pdf" target="_blank">Télécharger mon CV</a></button>
       <h3>SOCIABLE, ENERGIQUE ET PONCTUEL</h3>

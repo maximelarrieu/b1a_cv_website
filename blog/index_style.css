@@ -2,7 +2,7 @@
 /***Contener's base***/
 #contener {
   width: 955px;
-  height: 190px;
+  max-height: 190px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
@@ -84,16 +84,16 @@
 }
 .article h6 {
   position: relative;
-  margin-left: 190px;
-  margin-top: 15px;
-  width: 30%;
+  margin-left: 160px;
+  margin-top: 10px;
+  width: 50%;
   font-weight: bold;
   text-decoration: underline;
 }
 .description {
   margin: 3px;
   font-size: 0.9em;
-  margin-top: 37px;
+  margin-top: 27px;
   text-decoration: none;
   color: black;
 }

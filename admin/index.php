@@ -75,18 +75,35 @@
     $newproject->execute(array(NULL, $_POST['title'], $_POST['desc'], $_POST['techno'], $_POST['link'], $_POST['image']));
     header("Location: index.php");
   }
+  /***ADD NEW BILLET***/
+  if (!empty($_POST['title']) && !empty($_POST['author']) && !empty($_POST['desc']) && !empty($_POST['image']) && isset($_POST['link'], $_POST['newbillet'])) {
+    $newart = $connexion->prepare("
+    INSERT INTO
+    billetsthales
+    VALUES(
+      NULL,
+      '".addslashes($_POST['author'])."',
+      NOW(),
+      '".addslashes($_POST['title'])."',
+      '".addslashes($_POST['desc'])."',
+      '".addslashes($_POST['image'])."',
+      '".addslashes($_POST['link'])."')
+      ");
+    $newart->execute(array(NULL, $_POST['title'], $_POST['author'], $_POST['desc'], $_POST['image'], $_POST['link']));
+    header("Location: index.php");
+  }
   /***ADD NEW ARTICLE***/
   if (!empty($_POST['title']) && !empty($_POST['time']) && !empty($_POST['place']) && !empty($_POST['dates']) && !empty($_POST['desc']) && isset($_POST['link'], $_POST['img'], $_POST['newarticle'])) {
     $newart = $connexion->prepare("
     INSERT INTO
-    blogarticle
+    articlesthales
     VALUES(
       NULL,
+      '".addslashes($_POST['author'])."',
+      NOW(),
       '".addslashes($_POST['title'])."',
-      '".addslashes($_POST['time'])."',
-      '".addslashes($_POST['place'])."',
-      '".addslashes($_POST['dates'])."',
-      '".addslashes($_POST['desc'])."',
+      '".addslashes($_POST['articleintro'])."',
+      '".addslashes($_POST['article'])."',
       '".addslashes($_POST['link'])."',
       '".addslashes($_POST['img'])."')
       ");
@@ -109,9 +126,10 @@
     <link rel="stylesheet" href="../my_styles/mainwrapper.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
 
     <title>Dashboard - Maxime Larrieu</title>
-    <script src = "https://cdn.tiny.cloud/1/ykl6ae6i8da5qip69wd7170r11fiaivjclzkzznvtlvywp49/tinymce/5/tinymce.min.js"></script>
+    <script src = "https://cdn.tiny.cloud/1/klv0ftki68ptw5d2rn47mqvr6jlt21ell6qpctraaydvo38b/tinymce/5/tinymce.min.js"></script>
     <script>
     tinymce.init({
       selector: '#indexintro'
@@ -132,6 +150,31 @@
       selector: '#blogintro'
     });
     </script>
+    <script>
+    tinymce.init({
+      selector: '#pres'
+    });
+    </script>
+    <script>
+    tinymce.init({
+      selector: '#context'
+    });
+    </script>
+    <script>
+    tinymce.init({
+      selector: '#articleintro'
+    });
+    </script>
+    <script>
+    tinymce.init({
+      selector: '#article'
+    });
+    </script>
+    <script>
+    tinymce.init({
+      selector: '#billet'
+    });
+    </script>
   </head>
   <header>
     <div id="master">
@@ -141,10 +184,10 @@
     <nav>
       <ul>
         <li><a href="../index.php">ACCUEIL</a></li>
-        <li><a href="cv.php">CV</a></li>
-        <li><a href="projects.php">PROJETS</a></li>
+        <li><a href="../cv.php">CV</a></li>
+        <li><a href="../projects.php">PROJETS</a></li>
         <li><a href="../blog/index.php">BLOG</a></li>
-        <li><a href="contact.php">CONTACT</a></li>
+        <li><a href="../contact.php">CONTACT</a></li>
       </ul>
     </nav>
   </header>
@@ -353,93 +396,114 @@
           <textarea id="blogintro" name="blogintro"><?php echo $indexblogi['DESCRIPTION']?></textarea>
           <input type="submit" value="MODIFIER" name="blogmodif" />
         </form>
-        <?php
-        if (isset($_POST['blogmodif']) && isset($_POST['blogintro'])){
-          $blogintro = addslashes($_POST['blogintro']);
-          $modifblog = $connexion->prepare("UPDATE blogintro SET DESCRIPTION = '".$blogintro."'");
-          $modifblog->execute();
-        }
-        ?>
+      </div>
+      <div class="packmodif" id="thales">
+        <h3>Modification de la page Thales</h3>
+        <h4>Introduction : </h4>
+        <form method="post">
+          <select name="intro">
+            <?php
+              $listintro = $connexion->prepare('SELECT * FROM billetsintro');
+              $listintro->execute();
+              $selectedintro = $listintro->fetchAll(PDO::FETCH_ASSOC);
+              foreach ($selectedintro as $ichoice) {
+                echo '<option>'. $ichoice['SUJET'].'</option>';
+              }
+            ?>
+          </select>
+          <textarea id="pres" name="pres"><?php echo $ichoice['DESCRIPTION']?></textarea>
+          <textarea id="context" name="context"><?php echo $ichoice['CONTEXT']?></textarea>
+          <input type="submit" value="MODIFIER" name="introarticlemodif" />
+          <?php
+          if (isset($_POST['introarticlemodif']) && isset($_POST['pres']) && isset($_POST['context'])){
+            $pres = addslashes($_POST['pres']);
+            $context = addslashes($_POST['context']);
+            $modifintroarticle = $connexion->prepare("UPDATE billetsintro SET Description = '".$pres."', Context = '".$context."'");
+            $modifintroarticle->execute();
+          }
+          ?>
+        </form>
         <div class="new">
           <form method="post">
-            <h4>Articles : </h4>
-            <select name="selarticle">
+            <h4>Billets : </h4>
+            <select name="bil">
               <?php
-                $listarticle = $connexion->prepare('SELECT PLACE FROM blogarticle ORDER BY PLACE');
-                $listarticle->execute();
-                $selectedarticle = $listarticle->fetchAll(PDO::FETCH_ASSOC);
-                foreach ($selectedarticle as $achoice) {
-                  echo '<option>'. $achoice['PLACE'].'</option>';
+                $listbillets = $connexion->prepare('SELECT TITLE FROM billetsthales');
+                $listbillets->execute();
+                $selectedbillets = $listbillets->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($selectedbillets as $bchoice) {
+                  echo '<option>'. htmlspecialchars(addslashes($bchoice["TITLE"])).'</option>';
                 }
               ?>
             </select>
             <input type="text" placeholder="Titre" name="title" />
-            <input type="text" placeholder="Durée" name="time" />
-            <input type="text" placeholder="Lieu" name="place" />
-            <input type="text" placeholder="Dates début - fin" name="dates" />
-            <input type="text" placeholder="Description" name="desc" />
+            <input type="text" placeholder="Auteur" name="author" />
+            <textarea name='desc' id='desc'></textarea>
             <input type="text" placeholder="Lien" name="link" />
-            <input type="text" placeholder="Image" name="img" />
-            <input type="submit" value="AJOUTER" name="newarticle" />
-            <input type="submit" value="MODIFIER" name="modifarticle" />
-            <input type="submit" value="SUPPRIMER" name="supprarticle" />
+            <input type="text" placeholder="Image" name="image" />
+            <input type="submit" value="AJOUTER" name="newbillet" />
+            <input type="submit" value="MODIFIER" name="modifbillet" />
+            <input type="submit" value="SUPPRIMER" name="supprbillet" />
           </form>
           <?php
-          if (isset($_POST['title'], $_POST['time'], $_POST['place'], $_POST['dates'], $_POST['desc'], $_POST['link'], $_POST['img'], $_POST['modifarticle'], $_POST['selarticle'])){
-            $newarticle = $connexion->prepare("
-            UPDATE blogarticle
+          if (isset($_POST['title']) && isset($_POST['desc']) && isset($_POST['author']) && isset($_POST['link']) && isset($_POST['image']) && isset($_POST['modifbillet']) && isset($_POST['bil'])){
+            $newbil = $connexion->prepare("
+            UPDATE billetsthales
             SET
-            TITLE = '".addslashes($_POST['title'])."',
-            DUREE = '".addslashes($_POST['time'])."',
-            PLACE = '".addslashes($_POST['place'])."',
-            DATESTOTALES = '".addslashes($_POST['dates'])."',
+            TITLE = '".htmlspecialchars(addslashes($_POST['title']))."',
             DESCRIPTION = '".addslashes($_POST['desc'])."',
+            AUTHOR = '".addslashes($_POST['author'])."',
             LINK = '".addslashes($_POST['link'])."',
-            IMAGE = '".addslashes($_POST['img'])."'
-            WHERE TITLE = '".$_POST['selarticle']."'
+            IMAGE = '".addslashes($_POST['image'])."'
+            WHERE TITLE = '".$_POST['bil']."'
             ");
-            $newarticle->execute();
+            $newbil->execute();
           }
-          if (isset($_POST['supprarticle']) && isset($_POST['selarticle'])) {
-            $supprart = $connexion ->prepare('DELETE FROM blogarticle WHERE TITLE = "'.$_POST['selarticle'].'"');
-            $supprart->execute();
+          if (isset($_POST['supprbillet']) && isset($_POST['bil'])) {
+            $supprbil = $connexion ->prepare('DELETE FROM billetsthales WHERE TITLE = "'.$_POST['bil'].'"');
+            $supprbil->execute();
           }
           ?>
         </div>
       </div>
-      <div class="packmodif" id="admin">
-        <h3>Ajouter un membre admin</h3>
+      <div class="packmodif" id="thales">
+        <h3>Modification des articles</h3>
+        <h4>Articles : </h4>
         <form method="post">
-          <select name="adminsel">
+          <?php
+            $showarticle = $connexion->prepare("SELECT DESCRIPTION FROM articlesthales");
+            $showarticle->execute();
+            $articleshown = $showarticle->fetch();
+          ?>
+          <select name="articlechoice" onchange="changing()">
             <?php
-              $listadmin = $connexion->prepare('SELECT USERNAME FROM login ORDER BY USERNAME');
-              $listadmin->execute();
-              $selectedadmin = $listadmin->fetchAll(PDO::FETCH_ASSOC);
-              foreach ($selectedadmin as $achoice) {
-                echo '<option>'. $achoice['USERNAME'].'</option>';
+              $listart = $connexion->prepare('SELECT * FROM articlesthales ORDER BY ID DESC');
+              $listart->execute();
+              $selectedart = $listart->fetchAll(PDO::FETCH_ASSOC);
+              foreach ($selectedart as $achoice) {
+                echo '<option>'. $achoice['TITLE'].'</option>';
               }
             ?>
           </select>
-          <input type="text" placeholder="Identifiant..." name="newid" />
-          <input type="password" placeholder="Mot de passe..." name="newpass" />
-          <input type="submit" value="AJOUTER" name="newadmin" />
-          <input type="submit" value="MODIFIER" name="modifadmin" />
-          <input type="submit" value="SUPPRIMER" name="suppradmin" />
+          <input type="text" placeholder="Titre" name="title" />
+          <input type="text" placeholder="Auteur" name="author" />
+          <input type="text" placeholder="Image" name="img" />
+          <textarea id="articleintro" name="articleintro"><?php echo $achoice['INTRO']?></textarea>
+          <textarea id="article" name="article"><?php echo $achoice['DESCRIPTION']?></textarea>
+          <input type="submit" value="AJOUTER" name="addrticle" />
+          <input type="submit" value="MODIFIER" name="articlemodif" />
+          <input type="submit" value="SUPPRIMER" name="articlesuppr" />
         </form>
         <?php
-        if (isset($_POST['adminsel']) && isset($_POST['modifadmin'])){
-          $modifadmin = $connexion->prepare("
-          UPDATE login
-          SET
-          USERNAME = '".addslashes($_POST['newid'])."',
-          PASSWORD = '".addslashes($_POST['newpass'])."'
-          WHERE USERNAME = '".$_POST['adminsel']."'
-          ");
-          $modifadmin->execute();
+        if (isset($_POST['articlemodif']) && isset($_POST['articleintro']) && isset($_POST['article']) && isset($_POST['title']) && isset($_POST['author']) && isset($_POST['img']) && isset($_POST['articlechoice'])){
+          $article = addslashes($_POST['article']);
+          $intro = addslashes($_POST['articleintro']);
+          $modifarticle = $connexion->prepare("UPDATE articlesthales SET Description = '".$article."', Intro = '".$intro."', Wdate = NOW()");
+          $modifarticle->execute();
         }
-        if (isset($_POST['suppradmin']) && isset($_POST['adminsel'])) {
-          $suppradmin = $connexion ->prepare('DELETE FROM login WHERE USERNAME = "'.$_POST['adminsel'].'"');
-          $suppradmin->execute();
+        if (isset($_POST['articlesuppr']) && isset($_POST['articlechoice'])) {
+          $supprbil = $connexion ->prepare('DELETE FROM articlesthales WHERE TITLE = "'.$_POST['articlechoice'].'"');
+          $supprbil->execute();
         }
         ?>
       </div>

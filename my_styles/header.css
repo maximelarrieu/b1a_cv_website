@@ -28,7 +28,8 @@ header {
   position: relative;
   font-size: 30px;
   margin-top: 68px;
-  margin-left: 13%;
+  margin-bottom: 19px;
+  margin-left: 11%;
   text-transform: uppercase;
   letter-spacing: 4px;
   color: white;
@@ -40,14 +41,14 @@ header h4 {
   letter-spacing: 2px;
   text-transform: uppercase;
   font-size: 12px;
-  margin-left: 13.1%;
+  margin-left: 11.1%;
   letter-spacing: 2px;
 }
 /***The navbar's implementation***/
 nav {
   position: absolute;
   width: 500px;
-  margin-left: 56%;
+  margin-left: 60%;
   bottom: 0;
   /*border: 1px solid;*/
 }

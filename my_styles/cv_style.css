@@ -10,7 +10,11 @@
   background-color: rgba(75, 75, 75, 0.38);
   border: 2px solid rgb(25, 56, 120);
   box-shadow: 15px 12px 8px 1px rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
+}
+#pdp {
   border-radius: 2px;
+  box-shadow: 5px 4px 14px 2px rgba(0, 0, 0, 0.7);
 }
 #contener h2, #contener img, button {
   float: left;
@@ -90,7 +94,7 @@ button a {
 #main {
   position: relative;
   width: 960px;
-  min-height: 1330px;
+  min-height: 1270px;
   top: 180px;
   margin-left: auto;
   margin-right: auto;
@@ -148,7 +152,7 @@ button a {
   margin: 0;
 }
 .pro h5 {
-  margin-top: 30px;
+  margin-top: 15px;
 }
 .pro h6 {
   color: rgb(15, 32, 65);
@@ -213,7 +217,7 @@ button a {
 #hobbies {
   margin-top: 30px;
   height: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 #hobbies img {
   display: inline-block;

@@ -39,12 +39,7 @@
       ?>
       <?php echo $datadesc['description']; ?>
       <div class="bottomTitle">
-        <?php
-        /*SQL request to bdd*/
-        $sub->execute();
-        $subtitle = $sub->fetch();
-        ?>
-        <p><?php echo $subtitle['sous-titre']?></p>
+        <p><?php echo $datadesc['subtitle']?></p>
       </div>
       <div id="bottom">
         <div class="left">
