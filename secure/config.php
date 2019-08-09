@@ -5,7 +5,7 @@ try {
   /*$login = "id8918687_my_cv";
   $password = "mydatabasecv";*/
   $login = "root";
-  $password = "";
+  $password = "mdp";
   $charset = 'UTF8';
   $options = [
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::
