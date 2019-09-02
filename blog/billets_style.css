@@ -3,7 +3,7 @@
 #entreprise {
   width: 72%;
   min-height: 350px;
-  margin-left: auto;
+  margin-left: 235px;
   margin-right: auto;
   padding-left: 20px;
   position: relative;
@@ -56,7 +56,7 @@ p {
   position: relative;
   width: 29.4%;
   margin: 10px;
-  min-height: 500px;
+  height: 500px;
   background-color: rgba(235, 235, 235, 0.68);
   border: 2px solid black;
   border-radius: 6px;

@@ -11,4 +11,5 @@
   $article2 = $connexion->prepare('SELECT * FROM articlesthales WHERE ID=2');
   $article3 = $connexion->prepare('SELECT * FROM articlesthales WHERE ID=3');
   $article4 = $connexion->prepare('SELECT * FROM articlesthales WHERE ID=4');
+  $article5 = $connexion->prepare('SELECT * FROM articlesthales WHERE ID=5');
 ?>
